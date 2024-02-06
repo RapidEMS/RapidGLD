@@ -47,14 +47,14 @@ public class SimToolBar extends GLDToolBar
 	}
 	
 	protected void addTools() {
-  	addButton("gld/images/edgenode.gif", this, EDGENODE);
+  	addButton("images/edgenode.gif", this, EDGENODE);
   	
   	addSeparator();
   	
-  	addButton("gld/images/step.gif", this, STEP);
-  	addButton("gld/images/run.gif", this, RUN);
-  	addButton("gld/images/pause.gif", this, PAUSE);
-  	addButton("gld/images/stop.gif", this, STOP);
+  	addButton("images/step.gif", this, STEP);
+  	addButton("images/run.gif", this, RUN);
+  	addButton("images/pause.gif", this, PAUSE);
+  	addButton("images/stop.gif", this, STOP);
   	
   	addSeparator();
 		

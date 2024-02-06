@@ -16,9 +16,7 @@
 
 package gld.infra;
 
-import gld.GeneralSettings;
-import gld.infra.*;
-import java.awt.Color;
+import java.awt.*;
 import java.util.Random;
 
 /** 
@@ -37,9 +35,10 @@ public class RoaduserFactory
 	/** All the individual types of each concrete Roaduser */
 	public static final int CAR=1,
 	                        BUS=2,
-	                        BICYCLE=4;
+	                        BICYCLE=4,
+							AMBULANCE=5;
 	/** All concrete Roaduser types. */
-	protected static final int[] concreteTypes = {CAR,BUS,BICYCLE};
+	protected static final int[] concreteTypes = {CAR,BUS,BICYCLE,AMBULANCE};
 	/** *All* roadusers. */
 	protected static final int[] ALL = concreteTypes;
 	/** All the roadusers that fit in the Automobile category */
@@ -50,17 +49,18 @@ public class RoaduserFactory
 	protected static final int[] UNMOTORIZED = {BICYCLE};
 	/** All possible Roaduser types. */
 	public static final int[] types = { getSuperType(ALL),
-																				 getSuperType(AUTOMOBILE),
-	                                    getSuperType(UNMOTORIZED),
+										getSuperType(AUTOMOBILE),
+										getSuperType(UNMOTORIZED),
 	                                    CAR,
 	                                    BUS,
-	                                    BICYCLE}; 
+	                                    BICYCLE,
+										AMBULANCE};
 	/** Descriptions of all possible Roaduser types, corresponding to the types in <code>types</code>. */
-	public static final String[] typeDescs = {"All roadusers","Automobiles", "Bicycles", "Car", "Bus", "Bicycle"};
+	public static final String[] typeDescs = {"All roadusers","Automobiles", "Bicycles", "Car", "Bus", "Bicycle", "Ambulance"};
 	/** Descriptions of all concrete Roaduser types, corresponding to the types in <code>concreteTypes</code>. */
-	public static final String[] concreteTypeDescs = {"Car", "Bus", "Bicycle"};
+	public static final String[] concreteTypeDescs = {"Car", "Bus", "Bicycle", "Ambulance"};
 	/** Colors for all concrete Roaduser types, corresponding to the types in <code>concreteTypes</code>. */
-	public static final Color[] concreteTypeColors = {Color.blue, Color.red, Color.green};
+	public static final Color[] concreteTypeColors = {Color.blue, Color.red, Color.green, Color.black};
 
 	private RoaduserFactory() { } // cannot instantiate this
 
@@ -99,6 +99,7 @@ public class RoaduserFactory
 			case CAR : return (rnd.nextFloat() < PacChance ? new PacCar(start,dest,0) : new Car(start,dest,0));
 			case BUS : return new Bus(start,dest,0);
 			case BICYCLE : return new Bicycle(start,dest,0);
+			case AMBULANCE : return new Ambulance(start,dest,0);
 		}
 		
 		throw new InfraException ("The RoaduserFactory couldn't make a Roaduser of type "+type+", reason : unknown class.");

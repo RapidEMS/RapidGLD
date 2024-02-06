@@ -16,13 +16,18 @@
 
 package gld;
 
-import gld.*;
-import gld.utils.*;
-import gld.tools.*;
+import gld.tools.EdgeNodeTool;
+import gld.tools.ScrollTool;
+import gld.tools.SelectTool;
+import gld.tools.ZoomTool;
+import gld.utils.IconButton;
+import gld.utils.ToolBar;
 
 import java.awt.*;
-import java.util.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 /**
  * Abstract ToolBar for simulator and editor contains common elements
@@ -57,9 +62,9 @@ public abstract class GLDToolBar extends ToolBar implements ActionListener, Item
 		controller = c;
 
 
-		if (newicon) addButton("gld/images/new.gif", this, NEW);
-		addButton("gld/images/open.gif", this, OPEN);
-		addButton("gld/images/save.gif", this, SAVE);
+		if (newicon) addButton("images/new.gif", this, NEW);
+		addButton("images/open.gif", this, OPEN);
+		addButton("images/save.gif", this, SAVE);
 		
 		addSeparator();
 
@@ -77,12 +82,12 @@ public abstract class GLDToolBar extends ToolBar implements ActionListener, Item
     addComponent(zoom);
     
     addSeparator();
-    addButton("gld/images/center.gif", this, CENTER);
+    addButton("images/center.gif", this, CENTER);
 		addSeparator();
 
-  	addButton("gld/images/scroll.gif", this, SCROLL);
-  	addButton("gld/images/zoom.gif", this, ZOOM);
-  	addButton("gld/images/select.gif", this, SELECT);
+  	addButton("images/scroll.gif", this, SCROLL);
+  	addButton("images/zoom.gif", this, ZOOM);
+  	addButton("images/select.gif", this, SELECT);
   	
   	addSeparator();
 
@@ -90,11 +95,11 @@ public abstract class GLDToolBar extends ToolBar implements ActionListener, Item
 
   	addSeparator();
   	
-  	addButton("gld/images/config.gif", this, CONFIG);
+  	addButton("images/config.gif", this, CONFIG);
   	
   	addSeparator();
   	
-		addButton("gld/images/help.gif", this, HELP);
+		addButton("images/help.gif", this, HELP);
 		
 		addSeparator();
 	}

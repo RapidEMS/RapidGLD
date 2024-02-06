@@ -17,12 +17,10 @@
 package gld.edit;
 
 import gld.GLDToolBar;
-import gld.utils.*;
 import gld.tools.*;
+import gld.utils.IconButton;
 
-import java.awt.*;
-import java.util.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
 
 /**
  *
@@ -45,11 +43,11 @@ public class EditToolBar extends GLDToolBar
 	}
 	
 	protected void addTools() {
-//  	addButton("gld/images/total.gif", this, TOTAL);
-//		addButton("gld/images/move.gif", this, MOVE);
-  	addButton("gld/images/node.gif", this, NODE);
-  	addButton("gld/images/road.gif", this, ROAD);
-  	addButton("gld/images/drivelane.gif", this, LANE);
+//  	addButton("images/total.gif", this, TOTAL);
+//		addButton("images/move.gif", this, MOVE);
+  	addButton("images/node.gif", this, NODE);
+  	addButton("images/road.gif", this, ROAD);
+  	addButton("images/drivelane.gif", this, LANE);
 	}
 
 	public void actionPerformed(ActionEvent e) {
