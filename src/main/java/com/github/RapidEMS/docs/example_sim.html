@@ -1,0 +1,108 @@
+<HTML>
+<HEAD>
+<TITLE>Green Light District :: Documentation :: An Example Session :: Traffic simulation</TITLE>
+<LINK REL=stylesheet TYPE="text/css" HREF="sp2001isg.css">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#33FF33" VLINK="#FF6600" ALINK="#FF0000">
+<H4>Green Light District :: Documentation :: An Example Session :: Traffic simulation</H4>
+<TABLE WIDTH="760" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+  <TR> 
+    <TD><IMG src="screens/blank.gif" WIDTH="140" HEIGHT="10"></TD>
+    <TD><IMG src="screens/blank.gif" WIDTH="660" HEIGHT="10"></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"> 
+      <P><A HREF="index.html">Welcome</A></P>
+      <P>
+			<A HREF="editor.html">1. Editor</A><BR>
+   	   <A HREF="simulator.html">2. Simulator</A><BR>
+   	   <A HREF="evaluation.html">3. Evaluation Tools</A><BR>
+   	   <A HREF="example.html">4. An Example Session</A><BR>
+				<IMG src="screens/blank.gif" WIDTH="10" HEIGHT="10"><A HREF="example_map.html">a. Map Creation</A><BR>
+   	     <IMG src="screens/blank.gif" WIDTH="10" HEIGHT="10"><A HREF="example_sim.html">b. Traffic Simulation</A><BR>
+   	     <IMG src="screens/blank.gif" WIDTH="10" HEIGHT="10"><A HREF="example_stats.html">c. Statistics Evaluation</A><BR>
+   	   <A HREF="algorithms.html">5. Algorithms</A><BR>
+		</P>
+      <P>
+		<A HREF="specs/index.html" TARGET="_blank">Specifications</A><BR>
+        <BR></P>
+      <P><A HREF="definitions.html">Definitions</A><BR>
+        <BR></P>
+      <P><A HREF="beyond.html">Beyond GLD</A><BR>
+        <BR>
+      </P>
+      <P><A HREF="about.html">About</A><BR>
+      </P>
+    </TD>
+
+    <TD VALIGN="top"> 
+
+      <h2>Simulator Usage</h2>
+
+   <P><ol>
+	<li>Start the Simulator and load our home brewn map "Simple".
+
+	<p><img src="screens/simple.gif" alt="A simple infrastructure"></p>
+
+	<li>Advance the simulator one step. A few road users are spawning from the Edge Nodes.
+
+	<p><img src="screens/x_simple_sim_1.gif" alt="Simple with initial traffic"></p>
+
+	<li>Run the simulation for a while. Traffic lights will begin to have an effect on the traffic, and eventually clogging points.
+	Notice the queue length indicators next to each edge node, and the colouring of junctions. These in-view statistics are showing few waiting road users outside the map, so we can conclude that we can "trust" the performance of algorithms.
+
+	<p><img src="screens/x_simple_sim_2.gif" alt="Simple with traffic"></p>
+
+	<li>If the spawn values are too low or too high, the simulation will either run smoothly without effect from algorithms or clog up swiftly.
+	Adjust some of the spawning values (for example: set the eastern edge nodes to low values, and the western ones to high values).
+	<li> Experiment with different TLC's, and see whether they have an effect on traffic flow.
+	If change isn't obvious, you might have to run <A HREF="example_stats.html">statistics</A> to detect them.
+
+	<li>The effect of running Random TLC: deadlock.
+
+	<p><img src="screens/x_simple_sim_rnd.gif" alt="Simple with random TLC"></p>
+
+	<li>Relative Longest Queue TLC spreads traffic much better.
+
+	<p><img src="screens/x_simple_sim_rlq.gif" alt="Simple with random TLC"></p>
+
+	</ol></P>
+
+	Not impressive enough? Load ready made map "Complex".<br><br>
+
+	<p><ol>
+	<li> Get to know the map if you haven't already in the previous section. <br>
+Notice that there are relatively less edge nodes, more ways to get to a destination, and that in the south-east more edge nodes are concentrated.
+
+	<p><img src="screens/complex.gif" alt="A complex infrastructure"></p>
+
+	<li> Here, changing spawning frequencies can strongly influence traffic flow.
+	Setting them to 0.0 effectively eliminates incoming traffic from the edge node,
+	though road users will have the same chance to get that edge node as destination
+	when they spawn elsewhere.<br>
+	Do not set the spawn frequency for the edge nodes in the south-east to high, and make their destination frequency more to the north-western edge node to spread traffic.
+
+	<p><img src="screens/x_complex_sim_1.gif" alt="A complex infrastructure"></p>
+
+	<li> Let's run a heavy algorithm. Select TC3 with co-learning, and set spawning values of about 0.3 for all edge nodes.
+	If you had a simple traffic controller previously selected, you will see big change in traffic flow.
+	More roads will be used and more road users will be moving at the same time.
+
+	<p><img src="screens/x_complex_sim_2.gif"  alt="A complex infrastructure"></p>
+
+	<li> To oversee performance for a complex map, let's run some  <A HREF="example_stats.html">statistics</A>.
+
+	</ol></P>
+
+	<P>After running a simulation, the Statistics will give an overview of its effectiveness with rush-hour traffic and show weak junctions in the infrastructure.</P>
+
+     </TD>
+  </TR> 
+<TR><TD COLSPAN="2">&nbsp;</TD></TR><TR>
+    <TD>&nbsp;</TD>
+    <TD VALIGN="top" ALIGN="right">&copy; 2001 SP2001-ISG</TD>
+  </TR>
+</TABLE>
+<P>&nbsp;</P>
+</BODY>
+</HTML>

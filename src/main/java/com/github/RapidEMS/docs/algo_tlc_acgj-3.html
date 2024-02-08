@@ -1,0 +1,37 @@
+<HTML><HEAD><TITLE>Green Light District :: Documentation :: Algorithms :: Traffic Light Controllers :: ACGJ-3</TITLE><LINK REL=stylesheet TYPE="text/css" HREF="sp2001isg.css"></HEAD><BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#33FF33" VLINK="#FF6600" ALINK="#FF0000"><H4>Green Light District :: Documentation :: Algorithms :: Traffic Light Controllers :: ACGJ-3</H4><TABLE WIDTH="760" BORDER="0" CELLSPACING="0" CELLPADDING="0">  <TR>     <TD><IMG src="screens/blank.gif" WIDTH="140" HEIGHT="10"></TD>    <TD><IMG src="screens/blank.gif" WIDTH="660" HEIGHT="10"></TD>  </TR>  <TR>    <TD VALIGN="top">       <P><A HREF="index.html">Welcome</A></P>      <P>		<A HREF="editor.html">1. Editor</A><BR>		<A HREF="simulator.html">2. Simulator</A><BR>		<A HREF="evaluation.html">3. Evaluation Tools</A><BR>		<A HREF="example.html">4. An Example Session</A><BR>		<A HREF="algorithms.html">5. Algorithms</A><BR>		<IMG src="screens/blank.gif" WIDTH="10" HEIGHT="10"><A HREF="algo_dp.html">a. Driving policies</A><BR>		<IMG src="screens/blank.gif" WIDTH="10" HEIGHT="10"><A HREF="algo_tlc.html">b. Traffic light controllers</A><BR>			<IMG src="screens/blank.gif" WIDTH="20" HEIGHT="10"><A HREF="algo_tlc_rnd.html">	1)  Random		</A><BR>			<IMG src="screens/blank.gif" WIDTH="20" HEIGHT="10"><A HREF="algo_tlc_mc.html">	2)  Most Cars	</A><BR>			<IMG src="screens/blank.gif" WIDTH="20" HEIGHT="10"><A HREF="algo_tlc_rld.html">	3)  RLD		</A><BR><BR>			<IMG src="screens/blank.gif" WIDTH="20" HEIGHT="10"><A HREF="algo_tlc_hill.html">	4)  Hillclimbing	</A><BR><BR>			<IMG src="screens/blank.gif" WIDTH="20" HEIGHT="10"><A HREF="algo_tlc_lq.html">	5)  Longest Queue	</A><BR>			<IMG src="screens/blank.gif" WIDTH="20" HEIGHT="10"><A HREF="algo_tlc_rlq.html">	6)  Relative LQ	</A><BR>			<IMG src="screens/blank.gif" WIDTH="20" HEIGHT="10"><A HREF="algo_tlc_bf.html">	7)  Best first	</A><BR><BR> <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_tc-1.html">8) TC-1</A><BR> <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_tc-2.html">9) TC-2</A><BR> <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_tc-3.html">10) TC-3</A><BR> <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_tc-1++.html">11) TC-1++</A><BR> <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_tc-2++.html">12) TC-2++</A><BR> <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_tc-3++.html">13) TC-3++</A><BR><BR> <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_acgj-1.html">14) ACGJ-1</A><BR> <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_acgj-2.html">15) ACGJ-2</A><BR> <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_acgj-3.html">16) ACGJ-3</A><BR><BR> <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_neural.html">17) GenNeural</A><BR>		</P>      <P>		<A HREF="specs/index.html" TARGET="_blank">Specifications</A><BR>        <BR></P>      <P><A HREF="definitions.html">Definitions</A><BR>        <BR></P>      <P><A HREF="beyond.html">Beyond GLD</A><BR>        <BR>      </P>      <P><A HREF="about.html">About</A><BR>      </P>    </TD>    <TD VALIGN="top">       <h2>ACGJ-3</h2>	  <p>This algorithm will receive a Roaduser-waiting-factor per traffic light, 
+        as well as a Alternation-factor per TrafficLight. These are calculated 
+        from the genes the ACGJ3Individual has. The waiting-factor is allowed 
+        to be between 0 and 4, the alternation-factor between 0 and 2.</p>
+      <p>Per Trafficlight the algorithm keeps track of the build-up Gain as calculated 
+        in previous iterations. The new gain in this so-called 'bucket' is calculated 
+        in this way:</p>
+      <p><i>B(tl)</i> : the gain-bucket for TrafficLight 'tl'<br>
+        <i>W(tl)</i> : the number of Roadusers waiting at the lane of TrafficLight 
+        'tl'<br>
+        <i>R(tl)</i> : the weight-per-Roaduser as given by the genes of TrafficLight 
+        'tl'<br>
+        <i>A(tl)</i> : the alternation-factor as given by the genes of TrafficLight 
+        'tl'</p>
+      <p><img src="screens/ACGJ3-form1.gif" width="193" height="52"></p>
+      <p>&nbsp;</p>
+      <p> Without leaking some from the bucket, this would lead to infite gains 
+        for each trafficlight. To make sure this never happens, whenever a Roaduser 
+        passes a TrafficLight, the Bucket is emptied some. The following formula 
+        shows how:</p>
+      <p><img src="screens/ACGJ3-form2.gif" width="220" height="52"></p>
+      <p><br>
+        Whenever a Roaduser is allowed to travel by it's TrafficLight, but can't 
+        change to it's desired Drivelane as it's full then action is taken to 
+        make it more likely that that particular lane will move and make space.</p>
+      <p><img src="screens/ACGJ3-form3.gif"></p>
+      <p>Currently an individual represents a whole city, all the trafficlights 
+        with their independent Weights and Factors. This means that convergion 
+        of the performance of this algorithm will go erratic and slowly. However, 
+        during this period many promising individuals will be created. The user 
+        is encouraged to create his own variants of this algorithm using different 
+        genetic-functions for evolving.<br>
+        <br>
+      </p>
+      <p>
+<br><br>
+	<table WIDTH="600" BORDER="0" CELLSPACING="10" CELLPADDING="10">	<caption><h2>Example Performance Statistics<h2></caption>	<tr><td><b>(Map: Simple) Average Junction Waiting Time	</b><br><br>		</td><td><IMG src="screens/simple_sp_acgj3_ajwt.gif"></td></tr>	<tr><td><b>(Map: Simple) Total Road Users Arrived			</b><br><br>		</td><td><IMG src="screens/simple_sp_acgj3_att.gif"></td></tr>	<tr><td><b>(Map: Simple) Average Trip Waiting Time		</b><br><br>		</td><td><IMG src="screens/simple_sp_acgj3_atwt.gif"></td></tr>	<tr><td><b>(Map: Simple) Total Waiting Queue Length		</b><br><br>		</td><td><IMG src="screens/simple_sp_acgj3_twql.gif"></td></tr>	</table><HR WIDTH="90%" ALIGN="LEFT">	<table WIDTH="600" BORDER="0" CELLSPACING="10" CELLPADDING="10">	<tr><td><b>(Map: Complex) Average Junction Waiting Time	</b><br><br>		</td><td><IMG src="screens/complex_sp_acgj3_ajwt.gif"></td></tr>	<tr><td><b>(Map: Complex) Total Road Users Arrived			</b><br><br>		</td><td><IMG src="screens/complex_sp_acgj3_att.gif"></td></tr>	<tr><td><b>(Map: Complex) Average Trip Waiting Time		</b><br><br>		</td><td><IMG src="screens/complex_sp_acgj3_atwt.gif"></td></tr>	<tr><td><b>(Map: Complex) Total Waiting Queue Length		</b><br><br>		</td><td><IMG src="screens/complex_sp_acgj3_twql.gif"></td></tr>	</table>     </TD>  </TR> <TR><TD COLSPAN="2">&nbsp;</TD></TR><TR>    <TD>&nbsp;</TD>    <TD VALIGN="top" ALIGN="right">&copy; 2001 SP2001-ISG</TD>  </TR></TABLE><P>&nbsp;</P></BODY></HTML>

@@ -1,0 +1,85 @@
+<HTML>
+<HEAD>
+<TITLE>Green Light District :: Documentation :: Evaluation</TITLE>
+<LINK REL=stylesheet TYPE="text/css" HREF="sp2001isg.css">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#33FF33" VLINK="#FF6600" ALINK="#FF0000">
+<H4>Green Light District :: Documentation :: Evaluation</H4>
+<TABLE WIDTH="760" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+  <TR> 
+    <TD><IMG src="screens/blank.gif" WIDTH="140" HEIGHT="10"></TD>
+    <TD><IMG src="screens/blank.gif" WIDTH="660" HEIGHT="10"></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"> 
+      <P><A HREF="index.html">Welcome</A></P>
+      <P>
+			<A HREF="editor.html">1. Editor</A><BR>
+   	   <A HREF="simulator.html">2. Simulator</A><BR>
+   	   <A HREF="evaluation.html">3. Evaluation Tools</A><BR>
+   	     <IMG src="screens/blank.gif" WIDTH="10" HEIGHT="10"><A HREF="eval_data.html">a. Data</A><BR>
+   	     <IMG src="screens/blank.gif" WIDTH="10" HEIGHT="10"><A HREF="eval_stats.html">b. Statistics</A><BR>
+   	   <A HREF="example.html">4. An Example Session</A><BR>
+   	   <A HREF="algorithms.html">5. Algorithms</A><BR>
+	</P>
+      <P>
+		<A HREF="specs/index.html" TARGET="_blank">Specifications</A><BR>
+        <BR></P>
+      <P><A HREF="definitions.html">Definitions</A><BR>
+        <BR></P>
+      <P><A HREF="beyond.html">Beyond GLD</A><BR>
+        <BR>
+      </P>
+      <P><A HREF="about.html">About</A><BR>
+      </P>
+    </TD>
+
+    <TD VALIGN="top"> 
+      <h2>Evaluation Tools</h2>
+
+
+      <P>The data collected from running a simulation on a map can be displayed and analyzed in a number of ways:
+	<ul>
+	<li>In-view statistics can be toggled on, which will color junctions to indicate the average waiting time
+	there. The darker the color, the longer road users have to wait there. Beside this, the following info
+	will be displayed in the top-left portion of the simulator screen:
+		<ul>
+		<li>largest waiting queue, with the ID of the junction
+		<li>largest average junction waiting time, with the cycle count
+		<li>total number of road users arrived, with count
+		</ul>
+
+	<br><li>The Statistics window can be opened, containing precise data on the current simulated map:
+		<ul>
+		<li>name of map, and author
+		<li>cycle when the Statistics window was opened
+		<li>list of edge nodes with: ID, arrived road users, current queue length, Total Road Users Arrived, and average trip waiting time
+		<li>list of junctions with: ID and average junction waiting time (best to be over viewed by toggling in-view statistics, see above
+		<li>totals of: number of road users arrived, current queue length, Total Road Users Arrived, average waiting time and average junction waiting time
+		</ul>
+		Alternatively, bar or pie charts can be opted for, instead of the standard table.
+		The window can be refreshed to the current cycle of the simulation.
+
+	<br><br><li>A tracking window to track one of the following:
+		<ul>
+		<li>total waiting queue length
+		<li>Total Road Users Arrived
+		<li>average trip waiting time
+		<li>average junction waiting time
+		</ul>
+		Multiple windows can be opened, each automatically showing a chart that sets the selected info
+		(on the Y-axis, updated every cycle) to the cycle time (X-axis, from the cycle the window was
+		opened to a certain future cycle, updated when said cycle is passed)
+	</ul>
+	</P>
+
+     </TD>
+  </TR> 
+<TR><TD COLSPAN="2">&nbsp;</TD></TR><TR>
+    <TD>&nbsp;</TD>
+    <TD VALIGN="top" ALIGN="right">&copy; 2001 SP2001-ISG</TD>
+  </TR>
+</TABLE>
+<P>&nbsp;</P>
+</BODY>
+</HTML>

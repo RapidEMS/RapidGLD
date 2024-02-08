@@ -1,0 +1,76 @@
+<HTML>
+<HEAD>
+<TITLE>Green Light District :: Documentation :: Algorithms</TITLE>
+<LINK REL=stylesheet TYPE="text/css" HREF="sp2001isg.css">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#33FF33" VLINK="#FF6600" ALINK="#FF0000">
+<H4>Green Light District :: Documentation :: Algorithms</H4>
+<TABLE WIDTH="760" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+  <TR> 
+    <TD><IMG src="screens/blank.gif" WIDTH="140" HEIGHT="10"></TD>
+    <TD><IMG src="screens/blank.gif" WIDTH="660" HEIGHT="10"></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"> 
+      <P><A HREF="index.html">Welcome</A></P>
+      <P>
+			<A HREF="editor.html">1. Editor</A><BR>
+   	   <A HREF="simulator.html">2. Simulator</A><BR>
+   	   <A HREF="evaluation.html">3. Evaluation Tools</A><BR>
+   	   <A HREF="example.html">4. An Example Session</A><BR>
+   	   <A HREF="algorithms.html">5. Algorithms</A><BR>
+   	     <IMG src="screens/blank.gif" WIDTH="10" HEIGHT="10"><A HREF="algo_dp.html">a. Driving policies</A><BR>
+				<IMG src="screens/blank.gif" WIDTH="10" HEIGHT="10"><A HREF="algo_tlc.html">b. Traffic light controllers</A><BR>
+		</P>
+      <P>
+		<A HREF="specs/index.html" TARGET="_blank">Specifications</A><BR>
+        <BR></P>
+      <P><A HREF="definitions.html">Definitions</A><BR>
+        <BR></P>
+      <P><A HREF="beyond.html">Beyond GLD</A><BR>
+        <BR>
+      </P>
+      <P><A HREF="about.html">About</A><BR>
+      </P>
+    </TD>
+
+    <TD VALIGN="top"> 
+
+	<H2>Algorithms</H2>
+
+	<p>As the behaviour of traffic light controllers and road users is best when insight of these agents in the
+	infrastructure is greatest, and we cannot pre-set them to all possible road combinations,
+	we enable learning in our algorithms. Reinforcement learning is used by both types of agents to minimise
+	either the own waiting time or to keep the average waiting time over all road users minimal. </p>
+	
+	<p>But non-learning algorithms are also available, to make comparisons possible. The only omission in
+	the traffic light control algorithms is a fixed algorithm, which is the common method of regulating
+	traffic with traffic lights. It is pre-set for each real-life infrastructure, and therefore a user would have to
+	set it up by hand, a time consuming affair, even more because simulation is only really usefull for
+	large infrastructures, and requires trying out various settings. </p>
+	<p>The variables in GLD consist of the road users and the way groups of traffic lights behave.
+	Driving policies and traffic light controllers describe the algorithms used to coordinate
+	the behaviour of these. Getting to know them will give more meaning to the evaluation of data from GLD.
+	It isn't necessary to fully understand the way the variables for spawning and such affect
+	the flow of traffic. Rather, it is worth knowing what kind of road network needs
+	what kind of sophistication in its traffic light controller to sustain a certain density of traffic.</p>
+
+	<P>
+	Eventually, implementation of physical sensors in real-world road infrastructure will be expensive, so
+	deciding which controller to implement is a matter of balancing its effectiveness on traffic and its cost.
+	</p>
+	<P>
+	In the <A HREF="example.html">examples</A> the maps Simple and Complex are shown, which have been used
+	in the here following subsections to give an idea of the performance of algorithms.
+	</p>
+
+     </TD>
+  </TR> 
+<TR><TD COLSPAN="2">&nbsp;</TD></TR><TR>
+    <TD>&nbsp;</TD>
+    <TD VALIGN="top" ALIGN="right">&copy; 2001 SP2001-ISG</TD>
+  </TR>
+</TABLE>
+<P>&nbsp;</P>
+</BODY>
+</HTML>

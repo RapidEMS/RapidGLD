@@ -1,0 +1,89 @@
+<HTML>
+<HEAD>
+<TITLE>Green Light District :: Documentation :: Evaluation :: Data</TITLE>
+<LINK REL=stylesheet TYPE="text/css" HREF="sp2001isg.css">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#33FF33" VLINK="#FF6600" ALINK="#FF0000">
+<H4>Green Light District :: Documentation :: Evaluation :: Data</H4>
+<TABLE WIDTH="760" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+  <TR> 
+    <TD><IMG src="screens/blank.gif" WIDTH="140" HEIGHT="10"></TD>
+    <TD><IMG src="screens/blank.gif" WIDTH="660" HEIGHT="10"></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"> 
+      <P><A HREF="index.html">Welcome</A></P>
+      <P>
+			<A HREF="editor.html">1. Editor</A><BR>
+   	   <A HREF="simulator.html">2. Simulator</A><BR>
+   	   <A HREF="evaluation.html">3. Evaluation Tools</A><BR>
+   	     <IMG src="screens/blank.gif" WIDTH="10" HEIGHT="10"><A HREF="eval_data.html">a. Data</A><BR>
+   	     <IMG src="screens/blank.gif" WIDTH="10" HEIGHT="10"><A HREF="eval_stats.html">b. Statistics</A><BR>
+   	   <A HREF="example.html">4. An Example Session</A><BR>
+   	   <A HREF="algorithms.html">5. Algorithms</A><BR>
+	</P>
+      <P>
+		<A HREF="specs/index.html" TARGET="_blank">Specifications</A><BR>
+        <BR></P>
+      <P><A HREF="definitions.html">Definitions</A><BR>
+        <BR></P>
+      <P><A HREF="beyond.html">Beyond GLD</A><BR>
+        <BR>
+      </P>
+      <P><A HREF="about.html">About</A><BR>
+      </P>
+    </TD>
+
+    <TD VALIGN="top"> 
+
+      <h2>Extracted Data</h2>
+
+
+      <P>The data for statistics is recorded for each cycle when the simulator is running, and compacted as the number of cycles grows.<br>
+	The statistics window will display precise info for the whole map, and for a subset of the nodes it can be displayed by using the Configuration Dialog of the Simulator.<br><br>
+	<IMG SRC="screens/stat_table.gif" ALT="Info in the statistics window for a whole infrastructure (Simple)">
+	<br><br>
+	The data can be saved or compared to other previously saved sets of data.<br>
+	Check the Tracking windows to oversee things: when the statistics in these windows show no change (fluctuate in a very predictable manner or just continue linearly) most data that can be calculated out of the current simulation has been extracted.<br>
+	Also, when being only interested in extracting numerical data, toggle off the view and cycle counter of the simulator to speed things up. Alternatively, toggle the view on from time to time to check on the traffic situation you were interested in, or leave the cycle counter on to know when to stop things.
+	</P>
+	<P>
+	It is also possible to export the gathered data to an ASCII text file, which will look like this:<br> <br>
+	<tt>
+	<IMG src="screens/blank.gif" WIDTH="15" HEIGHT="10">
+		# Data exported by GLD tracking window <br>
+	<IMG src="screens/blank.gif" WIDTH="15" HEIGHT="10">
+		# <br>
+	<IMG src="screens/blank.gif" WIDTH="15" HEIGHT="10">
+		# Infrastructure: "Simple" by GLD Team <br>
+	<IMG src="screens/blank.gif" WIDTH="15" HEIGHT="10">
+		# Simulation: "Simple" <br>
+	<IMG src="screens/blank.gif" WIDTH="15" HEIGHT="10">
+		# Tracking data: "average trip waiting time" <br>
+	<IMG src="screens/blank.gif" WIDTH="15" HEIGHT="10">
+		# Measured:  <br>
+	<IMG src="screens/blank.gif" WIDTH="15" HEIGHT="10">
+		# <br>
+	<IMG src="screens/blank.gif" WIDTH="15" HEIGHT="10">
+		# Format: <Cycle>	<All roadusers>	<Car>	<Bus> <br>
+	<IMG src="screens/blank.gif" WIDTH="15" HEIGHT="10">
+		# <br>
+	<IMG src="screens/blank.gif" WIDTH="15" HEIGHT="10">
+		337	11.623377	0.0000000	11.623377 <br>
+	<IMG src="screens/blank.gif" WIDTH="15" HEIGHT="10">
+		634	14.370861	21.229507	12.634854 <br>
+	</tt>
+	
+	<br>
+	This data (with the "#" rows omitted) can be imported into a sophisticated statistical program for further investigation.
+	</P>
+     </TD>
+  </TR> 
+<TR><TD COLSPAN="2">&nbsp;</TD></TR><TR>
+    <TD>&nbsp;</TD>
+    <TD VALIGN="top" ALIGN="right">&copy; 2001 SP2001-ISG</TD>
+  </TR>
+</TABLE>
+<P>&nbsp;</P>
+</BODY>
+</HTML>
