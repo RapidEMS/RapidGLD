@@ -36,7 +36,7 @@ public class RoaduserFactory
 	public static final int CAR=1,
 	                        BUS=2,
 	                        BICYCLE=4,
-							AMBULANCE=5;
+							AMBULANCE=8;
 	/** All concrete Roaduser types. */
 	protected static final int[] concreteTypes = {CAR,BUS,BICYCLE,AMBULANCE};
 	/** *All* roadusers. */
@@ -177,9 +177,9 @@ public class RoaduserFactory
 	public static int statArrayLength() { return concreteTypes.length + 1; }
 	
 	public static int getStatIndexByType(int ruType) {
-		return ruType == 0 ? 0 : (int)(Math.log(ruType)/Math.log(2)+1); 
+		return ruType == 0 ? 0 : (int)(Math.log(ruType)/Math.log(2)+1);
 	}
-	
+
 	/** Returns the statIndex belonging to a given concrete (!) ruType. */
 	public static int ruTypeToStatIndex(int ruType) {
 		return getStatIndexByType(ruType);

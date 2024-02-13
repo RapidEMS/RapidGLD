@@ -224,6 +224,7 @@ public class CustomFactory
 		null,
 		null,
 		{ "GLD0r" },
+		{ "AmbulanceVehicleDriverName"}
 	};
 	
 	protected static final String[][] VehicleDriverDescription = {
@@ -236,9 +237,11 @@ public class CustomFactory
 		null,
 		null,
 		null,
+		{ "AmbulanceVehicleDriverDescription"}
 	};
 	
 	protected static final String[][] VehicleDriverPicture = {
+		null,
 		null,
 		null,
 		null,
@@ -260,10 +263,12 @@ public class CustomFactory
 		null,
 		null,
 		null,
+		null
 	};
 	
 	// use just 1 item to have all vehicles have same color, independent of driver
 	protected static final int[][] VehicleDriverColor = {
+		/*
 		{ getRGB(0, 0, 255) },
 		{ getRGB(0, 255, 0) },
 		{ getRGB(255, 0, 0) },
@@ -272,7 +277,17 @@ public class CustomFactory
 		{ getRGB(255, 0, 0) },
 		{ getRGB(250,250,250) },
 		{ getRGB(0,0,0) },
-		{ getRGB(0,255,0) },
+		{ getRGB(0,255,0) }}
+		 */
+		{ getRGB(255,165,0) },
+		{ getRGB(255,165,0) },
+		{ getRGB(255,165,0) },
+		{ getRGB(255,165,0) },
+		{ getRGB(255,165,0) },
+		{ getRGB(255,165,0) },
+		{ getRGB(255,165,0) },
+		{ getRGB(255,165,0) },
+		{ getRGB(255,165,0) },
 	};
 
 
