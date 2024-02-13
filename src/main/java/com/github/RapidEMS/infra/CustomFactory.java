@@ -107,12 +107,14 @@ public class CustomFactory
 	protected static final int[] SupportedTypes = {
 		RoaduserFactory.CAR,
 		RoaduserFactory.BUS,
-		RoaduserFactory.BICYCLE
+		RoaduserFactory.BICYCLE,
+		RoaduserFactory.AMBULANCE
 	};
 	protected static final int[][] TypeVehicle = {
 		{ 0, 3, 4, 5, 6, 7, 8 },
 		{ 1 },
-		{ 2 }
+		{ 2 },
+		{ 9 } // Ambulance
 	};
 	
 	protected static final String[] VehicleName = {
@@ -125,6 +127,7 @@ public class CustomFactory
 		"Limousine",
 		"Limousine",
 		"GLD Cabrio",
+		"Ambulance"
 	};
 	// chance, nr current, max nr, speed, length, graph length, - width, nr passengers, ru type
 	protected static final int[][] VehicleProperties = {
@@ -137,6 +140,7 @@ public class CustomFactory
 	/* 6*/	{ 100, 0, 1, 3, 5, 16, 4, 4, RoaduserFactory.CAR}, // Limo 1
 	/* 7*/	{ 100, 0, 1, 3, 5, 16, 4, 4, RoaduserFactory.CAR}, // Limo 2
 	/* 8*/	{ 100, 0, 0, 2, 2, 6, 3, 1, RoaduserFactory.CAR }, // GLD Cabrio
+	/* 9*/  { 100, 0, 1, 3, 3, 10, 4, 10, RoaduserFactory.AMBULANCE} // Ambulance
 	};
 
 	protected static final int[][] VehicleDriver = {
@@ -149,9 +153,10 @@ public class CustomFactory
 		{ 8 },
 		{ 9 },
 		{ 10,11,12,13,14,15,16,17,18,19,20,21,22,},
+		{ 23 }
 	};
 	protected static final int[][] VehiclePassenger = {
-		null, null, null
+		null, null, null, null
 	};
 	
 	protected static final String[] PersonName = {
@@ -178,6 +183,7 @@ public class CustomFactory
 		"Rene",
 		"Robert",
 		"Sietse",
+		"Ambulance Driver",
 	};
 	// chance, nr current, nr max, speed
 	protected static final int[][] PersonProperties = {
@@ -204,6 +210,7 @@ public class CustomFactory
 		{   0, 0, 1, 0 }, // Rene
 		{ 100, 0, 1, 0 }, // Robert
 		{ 100, 0, 1, 0 }, // Sietse
+		{ 100, 0, 0, 0 } // Ambulance Driver
 	};
 
 	

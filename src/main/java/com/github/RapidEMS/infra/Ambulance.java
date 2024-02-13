@@ -19,7 +19,7 @@ package com.github.RapidEMS.infra;
 import java.awt.*;
 
 /**
- * The Bus. Red, Big, Mean and Lean people moving machine.
+ * Ambulance
  *
  * @author Group Datastructures
  * @version 1.0
@@ -28,7 +28,7 @@ import java.awt.*;
 
 public class Ambulance extends Automobile
 {
-	protected final int type = RoaduserFactory.getTypeByDesc("Bus");
+	protected final int type = RoaduserFactory.getTypeByDesc("Ambulance");
 	protected final int length = 3;
 	protected final int speed = 2;
 	protected final int passengers = 10;

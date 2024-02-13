@@ -42,7 +42,7 @@ public class RoaduserFactory
 	/** *All* roadusers. */
 	protected static final int[] ALL = concreteTypes;
 	/** All the roadusers that fit in the Automobile category */
-	protected static final int[] AUTOMOBILE = {CAR,BUS};
+	protected static final int[] AUTOMOBILE = {CAR,BUS,AMBULANCE};
 	/** All the roadusers that move on foot */
 	protected static final int[] PEDESTRIANS = {};
 	/** All the other roadusers that move unmotorized */

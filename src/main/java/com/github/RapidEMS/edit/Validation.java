@@ -223,15 +223,15 @@ public class Validation
 		int numSpecialNodes =infra.getNumSpecialNodes();
 		float edgeChance = (float)1.0 / (infra.getNumSpecialNodes()-1);
 		
-		int ruTypes[] = RoaduserFactory.getConcreteTypes();
+		int[] ruTypes = RoaduserFactory.getConcreteTypes();
 		int numRuTypes = ruTypes.length;
-		
+
 		Enumeration edgeNodes=Arrayutils.getEnumeration(infra.getEdgeNodes_());
 		while (edgeNodes.hasMoreElements())
 		{	EdgeNode edge = (EdgeNode)(edgeNodes.nextElement());
 			Drivelane[] lanes = edge.getOutboundLanes();
 			int lanetypes = 0;
-			for(int j=0;j<lanes.length;j++) {
+			for(int j = 0; j < lanes.length; ++j) {
 				lanetypes |= lanes[j].getType();
 			}
 			// now we've got an array of roadusers that can get on the road from here
