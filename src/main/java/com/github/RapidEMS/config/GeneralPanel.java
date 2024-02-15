@@ -35,7 +35,7 @@ import com.github.RapidEMS.utils.*;
 
 public class GeneralPanel extends ConfigPanel implements ActionListener
 {
-	Checkbox alwaysOnTop, safeNodeCrossing, crossNodes, useCustoms;
+	Checkbox alwaysOnTop, safeNodeCrossing, crossNodes, useCustoms, useRapidEMS;
 	TextField sepChar;
 	Button setSepChar;
 	
@@ -58,18 +58,22 @@ public class GeneralPanel extends ConfigPanel implements ActionListener
 		useCustoms.setBounds(0, 75, 250, 20);
 		add(useCustoms);
 
+		useRapidEMS = new Checkbox("Use RapidEMS");
+		useRapidEMS.setBounds(0, 100, 250, 20);
+		add(useRapidEMS);
+
 		Label sclab = new Label("Statistics export separator character:");
-		sclab.setBounds(0, 100, 220, 20);
+		sclab.setBounds(0, 125, 220, 20);
 		add(sclab);
 
 		sepChar = new TextField();
 		sepChar.addActionListener(this);
-		sepChar.setBounds(230, 100, 50, 20);
+		sepChar.setBounds(230, 125, 50, 20);
 		add(sepChar);
 		
 		setSepChar = new Button("Set");
 		setSepChar.addActionListener(this);
-		setSepChar.setBounds(285, 100, 40, 20);
+		setSepChar.setBounds(285, 125, 40, 20);
 		add(setSepChar);
 
 
@@ -83,6 +87,7 @@ public class GeneralPanel extends ConfigPanel implements ActionListener
 		safeNodeCrossing.setState(SignController.CrossNodesSafely);
 		crossNodes.setState(SimModel.CrossNodes);
 		useCustoms.setState(RoaduserFactory.UseCustoms);
+		useRapidEMS.setState(true);
 		
 		setSepChar();
 	}
@@ -92,6 +97,7 @@ public class GeneralPanel extends ConfigPanel implements ActionListener
 		SignController.CrossNodesSafely = safeNodeCrossing.getState();
 		SimModel.CrossNodes = crossNodes.getState();
 		RoaduserFactory.UseCustoms = useCustoms.getState();
+		Roaduser.useRapidEMS = useRapidEMS.getState();
 		
  		getSepChar();
 	}
