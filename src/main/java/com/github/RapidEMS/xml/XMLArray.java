@@ -191,7 +191,7 @@ public class XMLArray implements XMLSerializable
   }	
   
   /** Sets the InstantiationAssistant of this XMLArray
-    * @param The new InstantiationAssistant
+    * @param assistant The new InstantiationAssistant
 	*/
   public void setInstantiationAssistant (InstantiationAssistant assistant)
   {	watson=assistant;
@@ -516,9 +516,9 @@ public class XMLArray implements XMLSerializable
     /** Make a new XMLArrayElement
       * @param value This element contains a byte 
      */
-    XMLArrayElement(byte value)
-    { this.value=(new Byte(value)).toString();
-      type=XMLArray.BYTE;
+    XMLArrayElement(byte value) {
+      this.value = Byte.toString(value);
+      type = XMLArray.BYTE;
     }
 	 
     /** Make a new XMLArrayElement
@@ -564,21 +564,21 @@ public class XMLArray implements XMLSerializable
       * @throws XMLInvalidInputException If this XMLArrayElement doesn't
       *         contain an boolean value
      */
-    boolean getBooleanValue() throws XMLInvalidInputException
-    { assertType(XMLArray.BOOLEAN);
-      return (new Boolean(value)).booleanValue();
+    boolean getBooleanValue() throws XMLInvalidInputException {
+      assertType(XMLArray.BOOLEAN);
+      return Boolean.parseBoolean(value);
     }
     
     /** @return The Integer object which this XMLArrayElement contains
       * @throws XMLInvalidInputException If this XMLArrayElement doesn't
       *         contain an Integer object value
      */
-    Integer getIntClassValue () throws XMLInvalidInputException
-    { assertType(XMLArray.INT_CLASS);
+    Integer getIntClassValue () throws XMLInvalidInputException {
+      assertType(XMLArray.INT_CLASS);
       if (nullValue)
          return null;
       else 
-         return new Integer(value);
+         return Integer.parseInt(value);
     }
     
     /** @return The Double object which this XMLArrayElement contains
@@ -590,7 +590,7 @@ public class XMLArray implements XMLSerializable
       if (nullValue)
          return null;
       else 
-         return new Double(value);
+         return Double.parseDouble(value);
     }
 
     /** @return The Float object which this XMLArrayElement contains
@@ -602,7 +602,7 @@ public class XMLArray implements XMLSerializable
       if (nullValue)
          return null;
       else 
-         return new Float(value);
+         return Float.parseFloat(value);
     }
 
     /** @return The Boolean object which this XMLArrayElement contains
@@ -614,7 +614,7 @@ public class XMLArray implements XMLSerializable
       if (nullValue)
          return null;
       else 
-         return new Boolean(value);
+         return Boolean.parseBoolean(value);
     }
 
     /** @return The byte which this XMLArrayElement contains
@@ -623,7 +623,7 @@ public class XMLArray implements XMLSerializable
      */
     byte getByteValue() throws XMLInvalidInputException
     { assertType(XMLArray.BYTE);
-      return (new Byte(value)).byteValue();
+      return Byte.parseByte(value);
     }
 	 
     /** @return The Byte object which this XMLArrayElement contains
@@ -635,7 +635,7 @@ public class XMLArray implements XMLSerializable
       if (nullValue)
          return null;
       else 
-         return new Byte(value);
+         return Byte.parseByte(value);
     }
     
     /** @return The Object which this XMLArrayElement contains
