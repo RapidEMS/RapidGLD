@@ -30,7 +30,7 @@ public class Typeutils
 	 * Extracts all the primitive types (2^n) from a given type-integer
 	 *
 	 * @param type The type-integer to extract.
-	 * @param returns The array of primitive integer types.
+	 * @return The array of primitive integer types.
 	 */
 	public static int[] getTypes(int type) {
 		System.out.println("To Type: "+type);

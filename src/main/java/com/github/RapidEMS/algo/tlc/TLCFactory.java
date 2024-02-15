@@ -169,7 +169,7 @@ public class TLCFactory
 	/** Looks up the id of a TLC algorithm by its description
 	  * @param algoDesc The description of the algorithm
 	  * @return The id of the algorithm
-	  * @throws NoSuchElementException If there is no algorithm with that
+	  * @throws java.util.NoSuchElementException If there is no algorithm with that
 	  *        description.
 	 */
 	public static int getId (String algoDesc)
@@ -182,7 +182,7 @@ public class TLCFactory
   	/** Look up the description of a TLC algorithm by its id
 	  * @param algoId The id of the algorithm
 	  * @return The description
-	  * @throws NoSuchElementException If there is no algorithm with the
+	  * @throws java.util.NoSuchElementException If there is no algorithm with the
 	  *	    specified id.
 	*/
   	public static String getDescription (int algoId)

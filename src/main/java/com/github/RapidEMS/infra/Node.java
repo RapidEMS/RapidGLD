@@ -305,7 +305,7 @@ public abstract class Node implements Selectable, XMLSerializable, TwoStageLoade
 		/**
 		 * Adds a certain value to an existing average.
 		 * @param oldAvg The previous average.
-		 * @param oldNum The number of samples the new average is based on.
+		 * @param newNum The number of samples the new average is based on.
 		 * @param value  The new sample to add to this average.
 		 */
 		private float addToAverage(float oldAvg, float newNum, int value)
@@ -546,7 +546,7 @@ public abstract class Node implements Selectable, XMLSerializable, TwoStageLoade
 	 * @throw InfraException if r is null
 	 * @throw InfraException if the given road is not connected to this node
 	 */
-	public abstract void remRoad(Road r) throws InfraException;
+	public abstract void remRoad(Road road) throws InfraException;
 
 	/**
 	 * Removes all roads from this node.

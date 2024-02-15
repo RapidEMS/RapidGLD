@@ -268,7 +268,7 @@ public class Arrayutils
 	 * Removes all elements after the specified length.
 	 *
 	 * @param ar The array to crop.
-	 * @param len The length to crop to.
+	 * @param length The length to crop to.
 	 * @return A new array with the same elements as ar, cropped to length len
 	 */
 	public static Object cropArray(Object ar, int length) {
@@ -281,7 +281,7 @@ public class Arrayutils
 	 * Resizes an array to specified length.
 	 *
 	 * @param ar The array to resize.
-	 * @param len The length to resize to.
+	 * @param length The length to resize to.
 	 * @return A new array with the same elements as ar, resized to length len
 	 */
 	public static Object resizeArray(Object[] ar, int length) {
@@ -349,7 +349,7 @@ public class Arrayutils
 	}
 */	
 	/** Determines the dimension of an array by the name of its class
-	  * @param The classname of an array.
+	  * @param className the classname of an array.
 	  * @return Its dimension
 	 */
 	public static int getDimensionClassName (String className) 
@@ -366,7 +366,7 @@ public class Arrayutils
 	
   /** Calculates the *direct* component of an array by the name of its class.
     * So for instance : the direct component of "[[[I" is "[[I".
-    * @param The classname of an array
+    * @param className The classname of an array
     * @return The classname of its direct component. If the direct component
     *          is a "normal class" then the classname is converted to the
     *          standard notation. Names of primitive types are *NOT* converted
@@ -390,7 +390,7 @@ public class Arrayutils
 
   /** Calculates the *atomary* component of an array by the name of its class.
     * So for instance : the atomary component of "[[[I" is "I".
-    * @param The classname of an array
+    * @param className the classname of an array
     * @return The classname of its atomary component. If the direct component
     *          is a "normal class" then the classname is converted to the
     *          standard notation. Names of primitive types are *NOT* converted

@@ -17,7 +17,7 @@ public class StringUtils
     * @return The resulting string with all stuff replaced
    */
   public static String replaceList (String string,String[] from,String[] to)
-  { String result=new String(string);
+  { String result = string;
     for (int t=0;t<from.length;t++)
         result=StringUtils.replace(result,from[t],to[t]);
     return result;
@@ -34,22 +34,22 @@ public class StringUtils
     * @return The resulting string with all stuff replaced
    */
   public static String replaceList (String string,char[] from,String[] to )
-  {	String result="";
+  {	StringBuilder result= new StringBuilder();
   	char c;
 	int lastCopy=0;
 	for (int t=0;t<string.length();t++)
 	{	c=string.charAt(t);
 		for (int u=0;u<from.length;u++)
 		{	if (c==from[u])
-			{	result+=string.substring(lastCopy,t)+to[u];
+			{	result.append(string, lastCopy, t).append(to[u]);
 				lastCopy=t+1;
 				break;
 			}
 		}
 	}
 	if (lastCopy<string.length())
-       		result+=string.substring(lastCopy,string.length());
-    	return result;
+       		result.append(string.substring(lastCopy));
+    	return result.toString();
   }
 
   /** Replace all occurences of a string in another String
@@ -59,14 +59,14 @@ public class StringUtils
     * @return The result
    */
   public static String replace (String string,String o,String n)
-  { String result="";
-    int newIndex=0,oldIndex=0;
+  { StringBuilder result= new StringBuilder();
+    int newIndex,oldIndex=0;
     while ( (newIndex=string.indexOf(o,oldIndex))!=-1)
-    { result+=string.substring(oldIndex,newIndex)+n;
+    { result.append(string, oldIndex, newIndex).append(n);
       oldIndex=newIndex+o.length();
     }
-    result+=string.substring(oldIndex,string.length());
-    return result;
+    result.append(string.substring(oldIndex));
+    return result.toString();
   }
 
   /** Replace all occurences of a char in a String with a string
@@ -76,7 +76,7 @@ public class StringUtils
     * @return The result
    */
   public static String replace (String string,char o,String n)
-  { return StringUtils.replace(string,o+"",n);
+  { return StringUtils.replace(string, String.valueOf(o),n);
   }
 
   /** Replace a char in a string with another char
@@ -95,7 +95,7 @@ public class StringUtils
     * @return The result
    */
   public static String remove (String string,char o)
-  { return StringUtils.replace (string,o+"","");
+  { return StringUtils.replace (string, String.valueOf(o),"");
   }
 
   /** Remove all occurences of a string from another string
@@ -137,7 +137,7 @@ public class StringUtils
     }
     else
     { return Character.toUpperCase(string.charAt(0))+
-             string.substring(1,string.length());
+             string.substring(1);
     }
   }
 

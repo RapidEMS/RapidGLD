@@ -16,9 +16,6 @@
 
 package com.github.RapidEMS.xml;
 
-import com.github.RapidEMS.algo.dp.*;
-import com.github.RapidEMS.algo.tlc.*;
-import com.github.RapidEMS.infra.*;
 import com.github.RapidEMS.utils.*;
 import java.io.IOException;
 import java.lang.reflect.Array;
@@ -72,7 +69,6 @@ public class XMLArray implements XMLSerializable
     
   /**
    * Make a new XMLArray (constructor for loading)
-   * @return The new XMLArray
    */
   public XMLArray () 
   { 	// Empty
