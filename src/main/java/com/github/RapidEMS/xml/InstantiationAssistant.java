@@ -29,13 +29,13 @@ package com.github.RapidEMS.xml;
 public interface InstantiationAssistant
 {	/** Tell our parser if we can create an instance of a certain class
 	  * @param request The class of the object that the parser wants
-	  * @returns Can we create that?
+	  * @return Can we create that?
 	 */
 	public boolean canCreateInstance (Class request);
 
 	/** Create an instance of a certain class for our parser
 	  * @param request The class of the object that the parser wants
-	  * @returns An instance of that object
+	  * @return An instance of that object
 	  * @throws ClassNotFoundException If we don't know that class
 	  * @throws InstantiationException In case something goes wrong
 	 */

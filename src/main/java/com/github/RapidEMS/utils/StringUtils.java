@@ -14,7 +14,7 @@ public class StringUtils
     *        replace).
     * @param to The second column of the translation table (The strings to
              replace the elements of the from array with).
-    * @returns The resulting string with all stuff replaced
+    * @return The resulting string with all stuff replaced
    */
   public static String replaceList (String string,String[] from,String[] to)
   { String result=new String(string);
@@ -31,7 +31,7 @@ public class StringUtils
     *        replace).
     * @param to The second column of the translation table (The strings to
              replace the elements of the from array with).
-    * @returns The resulting string with all stuff replaced
+    * @return The resulting string with all stuff replaced
    */
   public static String replaceList (String string,char[] from,String[] to )
   {	String result="";
@@ -144,7 +144,7 @@ public class StringUtils
   	/** Lookup an element in an array
 	  * @param data The array to search in
 	  * @param index The index of the element you want
-	  * @returns The element at that position
+	  * @return The element at that position
 	  * @throws NoSuchElementException If the array has no element at
 	  *	    the specified index.
 	 */
@@ -161,7 +161,7 @@ public class StringUtils
 	  * using the object.equals(otherObject) method.
 	  * @param data The array to search in
 	  * @param object The element to search for
-	  * @returns The index of that element
+	  * @return The index of that element
 	  * @throws NullPointerException If the object to search for is null
 	  * @throws NoSuchElementException If the specified object cannot be
 	  *         found

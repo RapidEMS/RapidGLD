@@ -35,8 +35,8 @@ public class RoaduserFactory
 	/** All the individual types of each concrete Roaduser */
 	public static final int CAR=1,
 	                        BUS=2,
-	                        BICYCLE=4,
-							AMBULANCE=8;
+	                        BICYCLE=3,
+							AMBULANCE=4;
 	/** All concrete Roaduser types. */
 	protected static final int[] concreteTypes = {CAR,BUS,BICYCLE,AMBULANCE};
 	/** *All* roadusers. */
@@ -86,7 +86,7 @@ public class RoaduserFactory
 	  * @param dest The destination node of the Roaduser
 	  * @param pos The position of the Roaduser in its Drivelane
 	  * @throws InfraException If the Roaduser cannot be generated
-	  * @returns The generated Roaduser
+	  * @return The generated Roaduser
 	 */
  	public static Roaduser genRoaduser(int type, Node start, Node dest, int pos) throws InfraException
 	{
@@ -108,7 +108,7 @@ public class RoaduserFactory
 	/** Generate a new RoadUser
 	  * @param type The type number of the Roaduser
 	  * @throws InfraException If the Roaduser cannot be generated
-	  * @returns The generated Roaduser
+	  * @return The generated Roaduser
 	 */
 	public static Roaduser genRoaduser(int type) throws InfraException
 	{
@@ -118,7 +118,7 @@ public class RoaduserFactory
 	/** 
 	* Seeks the type number of a description of a Roaduser
 	* @param desc Description of the Roaduser type.
-	* @returns The typenumber
+	* @return The typenumber
 	*/
 	public static int getTypeByDesc(String desc) {
 			for(int i=0; i<types.length; i++)
@@ -177,7 +177,7 @@ public class RoaduserFactory
 	public static int statArrayLength() { return concreteTypes.length + 1; }
 	
 	public static int getStatIndexByType(int ruType) {
-		return ruType == 0 ? 0 : (int)(Math.log(ruType)/Math.log(2)+1);
+		return ruType;
 	}
 
 	/** Returns the statIndex belonging to a given concrete (!) ruType. */
@@ -188,7 +188,7 @@ public class RoaduserFactory
 	/** Returns the concrete ruType belonging to the given statIndex. */
 	public static int statIndexToRuType(int index) 
 	{ 
-		return index == 0 ? 0 : (int)Math.pow(2,index-1);
+		return index;
 	}	
 	
 	/** Returns the roaduser description belonging to the given statIndex. */

@@ -163,6 +163,8 @@ public class SimEdgeNodePanel extends ConfigPanel implements ItemListener, Actio
 		try {
 			SimModel sm = (SimModel)confd.getController().getModel();
 			float fr = Float.parseFloat(spawnFreq.getText());
+			String rutype = RoaduserFactory.getDescByType(getSpawnType());
+			System.out.println(rutype + ": " + fr);
 			sm.setSpawnFrequency(edgenode, getSpawnType(), fr);
 		}
 		catch (NumberFormatException ex) {

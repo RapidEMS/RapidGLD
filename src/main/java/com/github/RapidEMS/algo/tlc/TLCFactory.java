@@ -168,7 +168,7 @@ public class TLCFactory
 
 	/** Looks up the id of a TLC algorithm by its description
 	  * @param algoDesc The description of the algorithm
-	  * @returns The id of the algorithm
+	  * @return The id of the algorithm
 	  * @throws NoSuchElementException If there is no algorithm with that
 	  *        description.
 	 */
@@ -181,7 +181,7 @@ public class TLCFactory
 
   	/** Look up the description of a TLC algorithm by its id
 	  * @param algoId The id of the algorithm
-	  * @returns The description
+	  * @return The description
 	  * @throws NoSuchElementException If there is no algorithm with the
 	  *	    specified id.
 	*/

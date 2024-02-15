@@ -59,6 +59,10 @@ public class EdgeNode extends SpecialNode
 	public void load (XMLElement myElement,XMLLoader loader) throws XMLTreeException,IOException,XMLInvalidInputException
 	{	super.load(myElement,loader);
 		spawnFreq=(SpawnFrequency[])XMLArray.loadArray(this,loader);
+		System.out.println("Edgenode RoadUsers: ");
+		for(SpawnFrequency sf : spawnFreq)
+			System.out.println(sf.ruType + " ");
+		System.out.println();
 		destFreq=(DestFrequency[][])XMLArray.loadArray(this,loader);
 	}
 

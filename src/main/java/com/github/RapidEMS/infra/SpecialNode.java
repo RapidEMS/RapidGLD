@@ -93,7 +93,7 @@ public abstract class SpecialNode extends Node implements XMLSerializable,TwoSta
  	{ 	super.loadSecondStage(dictionaries);
 		if (!isAlpha) {
 			Dictionary roadDictionary=(Dictionary)(dictionaries.get("road"));
-     		road=(Road)(roadDictionary.get(new Integer(loadData.roadId)));
+     		road=(Road)(roadDictionary.get(loadData.roadId));
    		}
 		road.loadSecondStage(dictionaries);
 		try	{	updateLanes();		}

@@ -129,7 +129,7 @@ public abstract class Node implements Selectable, XMLSerializable, TwoStageLoade
 	  *            see above)
 	  * @param dest The position of the destination road (expressed in a C_
 	  * 			   constant, see above)
-	  * @returns The Direction from src to dest (expressed in D_ constants,
+	  * @return The Direction from src to dest (expressed in D_ constants,
 	  *          see above in Object variables of Node)
 	 */
 	public static int getDirection (int src,int dest)

@@ -33,7 +33,7 @@ public class Typeutils
 	 * @param returns The array of primitive integer types.
 	 */
 	public static int[] getTypes(int type) {
-		//System.out.println("To Type: "+type);
+		System.out.println("To Type: "+type);
 		if (type == 0) return new int[0];
 		int log = (int)Math.floor(Math.log(type) / Math.log(2));
 		//System.out.println("Log: "+log);
@@ -48,6 +48,12 @@ public class Typeutils
 			type -= checktype;
 			c++;
 		}
-		return (int[])Arrayutils.cropArray(types, c);
+
+		int[] out = (int[])Arrayutils.cropArray(types, c);
+
+		for (int i : out)
+			System.out.print(i + " ");
+		System.out.println();
+		return out;
 	}
 }

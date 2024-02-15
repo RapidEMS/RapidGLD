@@ -82,7 +82,7 @@ public class DPFactory
 
   	/** Look up the description of a DP algorithm by its id 
 	  * @param algoId The id of the algorithm
-	  * @returns The description
+	  * @return The description
 	  * @throws NoSuchElementException If there is no algorithm with the
 	  *	    specified id.
 	*/

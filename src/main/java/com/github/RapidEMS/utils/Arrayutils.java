@@ -240,7 +240,7 @@ public class Arrayutils
 	  *        objects of this class can be instantiated with
 	  *	   Class.newInstance. If the new length is less than the
 	  *	   old length of the array, then this parameter is irrelevant.
-	  * @returns The result array
+	  * @return The result array
 	  * @throws ClassNotFoundException If this method wants to create 
 	  *         objects, but it cannot find the class that newClass is
 	  *         referring to.
@@ -350,7 +350,7 @@ public class Arrayutils
 */	
 	/** Determines the dimension of an array by the name of its class
 	  * @param The classname of an array.
-	  * @returns Its dimension
+	  * @return Its dimension
 	 */
 	public static int getDimensionClassName (String className) 
 	{ if (className==null)
@@ -367,7 +367,7 @@ public class Arrayutils
   /** Calculates the *direct* component of an array by the name of its class.
     * So for instance : the direct component of "[[[I" is "[[I".
     * @param The classname of an array
-    * @returns The classname of its direct component. If the direct component
+    * @return The classname of its direct component. If the direct component
     *          is a "normal class" then the classname is converted to the
     *          standard notation. Names of primitive types are *NOT* converted
     *          (see java.lang.Class documentation for their meanings).
@@ -391,7 +391,7 @@ public class Arrayutils
   /** Calculates the *atomary* component of an array by the name of its class.
     * So for instance : the atomary component of "[[[I" is "I".
     * @param The classname of an array
-    * @returns The classname of its atomary component. If the direct component
+    * @return The classname of its atomary component. If the direct component
     *          is a "normal class" then the classname is converted to the
     *          standard notation. Names of primitive types are *NOT* converted
     *          (see java.lang.Class documentation for their meanings).
@@ -412,7 +412,7 @@ public class Arrayutils
     *                  designations for primitive types as used in 
     *                  java.lang.Class.
     * @param length The length of the array. Positive int of course.
-    * @returns The resulting array
+    * @return The resulting array
     * @throws ClassNotFoundException It's all in the name
    */
   public static Object createSingleArray (String className, int length) throws ClassNotFoundException
@@ -454,7 +454,7 @@ public class Arrayutils
     * @param length The length of the array. Positive int of course.
     * @param dimension The dimension of this array
     * @throws ClassNotFoundException It's all in the name
-    * @returns The resulting array.
+    * @return The resulting array.
    */
   public static Object createArray (String className,int length,int dimension) throws ClassNotFoundException
   { if (dimension<1)
@@ -473,7 +473,7 @@ public class Arrayutils
     * @param arrayName The classname of the array that you want to create
     * @param length The desired length
     * @throws ClassNotFoundException It's all in the name
-    * @returns The resulting array.
+    * @return The resulting array.
    */
   public static Object createArray (String arrayName,int length) throws ClassNotFoundException
   { return createArray(getAtomaryComponent(arrayName),length,

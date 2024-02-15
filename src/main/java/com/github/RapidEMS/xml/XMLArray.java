@@ -70,10 +70,9 @@ public class XMLArray implements XMLSerializable
     "java.lang.Float","java.lang.Boolean","java.lang.String","L","[","B",
 	 "java.lang.Byte"};
     
-  /** Make a new XMLArray (constructor for loading)
-    * @param parentName The XML name of the object that is going to save
-    *        this array.
-    * @returns The new XMLArray
+  /**
+   * Make a new XMLArray (constructor for loading)
+   * @return The new XMLArray
    */
   public XMLArray () 
   { 	// Empty
@@ -82,7 +81,7 @@ public class XMLArray implements XMLSerializable
   /** Empty constructor for loading 
     * @param parentName The XML name of the object that is going to load
     *        this array.
-   *  @returns A new XMLArray which can be used for loading
+   *  @return A new XMLArray which can be used for loading
    */
   public XMLArray (String parentName)
   { this.parentName=parentName;
@@ -94,7 +93,7 @@ public class XMLArray implements XMLSerializable
     * @param assistant The IntantiationAssistant to use when creating new
     	     objects (this parameter is only meaningful for XMLArrays that
 	     directly or indirectly contain XMLSerializable objects.)
-   *  @returns A new XMLArray which can be used for loading
+   *  @return A new XMLArray which can be used for loading
    */
   public XMLArray (String parentName,InstantiationAssistant assistant)
   { this.parentName=parentName;
@@ -108,7 +107,7 @@ public class XMLArray implements XMLSerializable
     *        this array.
     * @throws XMLCannotSaveException If there is something wrong with the input
     *        array.
-    * @returns The new XMLArray
+    * @return The new XMLArray
    */
   public XMLArray (Object input,String parentName) throws XMLCannotSaveException
   { this(input,parentName,"none"); 
@@ -122,7 +121,7 @@ public class XMLArray implements XMLSerializable
     *        useful for debugging.
     * @throws XMLCannotSaveException If there is something wrong with the input
     *        array.
-    * @returns The new XMLArray
+    * @return The new XMLArray
    */
   public XMLArray (Object input,String parentName,String alias) throws XMLCannotSaveException
   { if ( input.getClass().isArray() )
@@ -151,7 +150,7 @@ public class XMLArray implements XMLSerializable
     *  has to be loaded first.
     * @throws XMLInvalidInputException If the XMLArray was not loaded or if
     *         there is an internal problem.
-    * @returns The array which has been parsed
+    * @return The array which has been parsed
    */
   public Object getResult () throws XMLInvalidInputException
   { if (data==null)
@@ -188,7 +187,7 @@ public class XMLArray implements XMLSerializable
     return result;
   }
   
-  /** @returns The instantiation assistant of this XMLArray, or null if doesn't
+  /** @return The instantiation assistant of this XMLArray, or null if doesn't
     *          have one
 	*/
   public InstantiationAssistant getInstantiationAssistant ()
@@ -209,7 +208,7 @@ public class XMLArray implements XMLSerializable
     * @throws XMLInvalidInputException If the XMLArray was not loaded, if
     *         there is an internal problem or if the result class doesn't 
     *         match the parameter class.
-    * @returns The array which has been parsed
+    * @return The array which has been parsed
    */
   public Object getResult (Class expectedClass) throws XMLInvalidInputException
   { Object result=getResult();
@@ -227,7 +226,7 @@ public class XMLArray implements XMLSerializable
     * cannot determine the component type, then it assumes that all components
     * are XMLSerializable. This assumption may be wrong, but it doesn't hurt
     * since the saver later checks all components individually.
-    * @returns The component type of the data (the result is not 100% reliable)
+    * @return The component type of the data (the result is not 100% reliable)
    */
   protected int getComponentType ()
   { String componentName=Arrayutils.getComponentClassName(dataClass.getName());
@@ -271,7 +270,7 @@ public class XMLArray implements XMLSerializable
     * @param parent The object that is loading this array
     * @param loader The XMLLoader to load this array from
     * @param expectedClass The expected class of the result
-    * @returns The resulting array,vector or LinkedList
+    * @return The resulting array,vector or LinkedList
    */
   public static Object loadArray (XMLSerializable parent,XMLLoader loader,
                                   Class expectedClass) 
@@ -284,7 +283,7 @@ public class XMLArray implements XMLSerializable
   /** Load an arbitrary array. Do not check the result.
     * @param parent The object that is loading this array
     * @param loader The XMLLoader to load this array from
-    * @returns The resulting array,vector or LinkedList
+    * @return The resulting array,vector or LinkedList
    */
   public static Object loadArray (XMLSerializable parent,XMLLoader loader) 
          throws XMLInvalidInputException,XMLTreeException,IOException
@@ -298,7 +297,7 @@ public class XMLArray implements XMLSerializable
     * @param parent The object that is loading this array
     * @param loader The XMLLoader to load this array from
     * @param assistant The InstantiationAssistant to use
-    * @returns The resulting array,vector or LinkedList
+    * @return The resulting array,vector or LinkedList
    */
   public static Object loadArray (XMLSerializable parent,XMLLoader loader,
    				  InstantiationAssistant assistant) 
@@ -538,7 +537,7 @@ public class XMLArray implements XMLSerializable
     
     // Get result methods
     
-    /** @returns The int which this XMLArrayElement contains
+    /** @return The int which this XMLArrayElement contains
       * @throws XMLInvalidInputException If this XMLArrayElement doesn't
       *         contain an int value
      */
@@ -547,7 +546,7 @@ public class XMLArray implements XMLSerializable
       return Integer.parseInt(value);
     }
     
-    /** @returns The double which this XMLArrayElement contains
+    /** @return The double which this XMLArrayElement contains
       * @throws XMLInvalidInputException If this XMLArrayElement doesn't
       *         contain a double value
      */
@@ -556,7 +555,7 @@ public class XMLArray implements XMLSerializable
       return Double.parseDouble(value);
     }
 
-    /** @returns The float which this XMLArrayElement contains
+    /** @return The float which this XMLArrayElement contains
       * @throws XMLInvalidInputException If this XMLArrayElement doesn't
       *         contain a float value
      */
@@ -565,7 +564,7 @@ public class XMLArray implements XMLSerializable
       return Float.parseFloat(value);
     }
 
-    /** @returns The boolean which this XMLArrayElement contains
+    /** @return The boolean which this XMLArrayElement contains
       * @throws XMLInvalidInputException If this XMLArrayElement doesn't
       *         contain an boolean value
      */
@@ -574,7 +573,7 @@ public class XMLArray implements XMLSerializable
       return (new Boolean(value)).booleanValue();
     }
     
-    /** @returns The Integer object which this XMLArrayElement contains
+    /** @return The Integer object which this XMLArrayElement contains
       * @throws XMLInvalidInputException If this XMLArrayElement doesn't
       *         contain an Integer object value
      */
@@ -586,7 +585,7 @@ public class XMLArray implements XMLSerializable
          return new Integer(value);
     }
     
-    /** @returns The Double object which this XMLArrayElement contains
+    /** @return The Double object which this XMLArrayElement contains
       * @throws XMLInvalidInputException If this XMLArrayElement doesn't
       *         contain a Double object value
      */
@@ -598,7 +597,7 @@ public class XMLArray implements XMLSerializable
          return new Double(value);
     }
 
-    /** @returns The Float object which this XMLArrayElement contains
+    /** @return The Float object which this XMLArrayElement contains
       * @throws XMLInvalidInputException If this XMLArrayElement doesn't
       *         contain a Float object value
      */
@@ -610,7 +609,7 @@ public class XMLArray implements XMLSerializable
          return new Float(value);
     }
 
-    /** @returns The Boolean object which this XMLArrayElement contains
+    /** @return The Boolean object which this XMLArrayElement contains
       * @throws XMLInvalidInputException If this XMLArrayElement doesn't
       *         contain a Boolean object value
      */
@@ -622,7 +621,7 @@ public class XMLArray implements XMLSerializable
          return new Boolean(value);
     }
 
-    /** @returns The byte which this XMLArrayElement contains
+    /** @return The byte which this XMLArrayElement contains
       * @throws XMLInvalidInputException If this XMLArrayElement doesn't
       *         contain an byte value
      */
@@ -631,7 +630,7 @@ public class XMLArray implements XMLSerializable
       return (new Byte(value)).byteValue();
     }
 	 
-    /** @returns The Byte object which this XMLArrayElement contains
+    /** @return The Byte object which this XMLArrayElement contains
       * @throws XMLInvalidInputException If this XMLArrayElement doesn't
       *         contain a Byte object value
      */
@@ -643,7 +642,7 @@ public class XMLArray implements XMLSerializable
          return new Byte(value);
     }
     
-    /** @returns The Object which this XMLArrayElement contains
+    /** @return The Object which this XMLArrayElement contains
       * @throws XMLInvalidInputException If this XMLArrayElement doesn't
       *         contain an Object value
      */

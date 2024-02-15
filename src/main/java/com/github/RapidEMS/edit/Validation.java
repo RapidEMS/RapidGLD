@@ -242,9 +242,9 @@ public class Validation
 			
 			for(int j=0;j<types.length;j++) {
 				int[] dests = edge.getShortestPathDestinations(types[j]);
-				//System.out.println("Now checking for type:"+types[j]+" there are "+dests.length);
+				System.out.println("Now checking for type:"+types[j]+" there are "+dests.length);
 				if(dests.length>0) {
-					float freq = types[j]==RoaduserFactory.BUS ? 0.05f : 0.25f;
+					float freq = types[j] == RoaduserFactory.BUS ? 0.05f : 0.25f;
 					spawn[ruTypeCount] = new SpawnFrequency(types[j], freq);
 					//System.out.println("Added a spawn freq for type:"+types[j]+"(num_types:"+types.length+") from "+edges[i]);
 					ruTypeCount++;
