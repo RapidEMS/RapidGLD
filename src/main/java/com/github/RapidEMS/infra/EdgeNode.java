@@ -44,6 +44,9 @@ public class EdgeNode extends SpecialNode
 	/** The frequency with which spawned roadusers choose specific destinations */
 	protected DestFrequency[][] destFreq = {{}};
 
+	boolean isStartNode = false;
+	boolean isEndNode = false;
+
 	public EdgeNode() {}
 	
 	public EdgeNode(Point _coord) 
@@ -56,14 +59,20 @@ public class EdgeNode extends SpecialNode
 	/* LOAD and SAVE                              */
 	/*============================================*/
 
-	public void load (XMLElement myElement,XMLLoader loader) throws XMLTreeException,IOException,XMLInvalidInputException
-	{	super.load(myElement,loader);
+	public void load (XMLElement myElement,XMLLoader loader) throws XMLTreeException,IOException,XMLInvalidInputException {
+		super.load(myElement,loader);
+
 		spawnFreq=(SpawnFrequency[])XMLArray.loadArray(this,loader);
 		System.out.println("Edgenode RoadUsers: ");
 		for(SpawnFrequency sf : spawnFreq)
 			System.out.println(sf.ruType + " ");
 		System.out.println();
-		destFreq=(DestFrequency[][])XMLArray.loadArray(this,loader);
+
+		destFreq = (DestFrequency[][])XMLArray.loadArray(this,loader);
+
+		boolean[] bools = (boolean[])XMLArray.loadArray(this,loader);
+		isStartNode = bools[0];
+		isEndNode = bools[1];
 	}
 
 	public XMLElement saveSelf () throws XMLCannotSaveException {
@@ -76,6 +85,9 @@ public class EdgeNode extends SpecialNode
 	{	super.saveChilds(saver);
 		XMLArray.saveArray(spawnFreq,this,saver,"spawn-frequencies");
 		XMLArray.saveArray(destFreq,this,saver,"dest-frequencies");
+
+		boolean[] bools = {isStartNode, isEndNode};
+		XMLArray.saveArray(bools, this, saver, "booleans");
 	}
 
  	public String getXMLName ()
@@ -158,6 +170,24 @@ public class EdgeNode extends SpecialNode
 		for(int i=0; i<destFreq[edgeId].length; i++)
 			if(destFreq[edgeId][i].ruType == ruType)
 				destFreq[edgeId][i].freq = dest;
+	}
+
+	public boolean isStartNode() {
+		return isStartNode;
+	}
+
+	public void setStartNode(boolean startNode) {
+		System.out.println("Setting Start Node to " + startNode);
+		isStartNode = startNode;
+	}
+
+	public boolean isEndNode() {
+		return isEndNode;
+	}
+
+	public void setEndNode(boolean endNode) {
+		System.out.println("Setting End  to " + endNode);
+		isEndNode = endNode;
 	}
 
 	/*============================================*/
