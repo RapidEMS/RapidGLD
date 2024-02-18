@@ -38,10 +38,6 @@ import java.applet.*;
 
 abstract public class Roaduser implements Selectable, XMLSerializable, TwoStageLoader, Cloneable
 {
-	/**
-	 * if RapidEMS is being used or not
-	 */
-	public static boolean useRapidEMS = true;
 
 	/** The node this Roaduser spawned at */
 	protected Node startNode;
