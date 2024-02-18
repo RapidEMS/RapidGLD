@@ -21,6 +21,8 @@ import java.awt.event.*;
 import java.util.*;
 
 import com.github.RapidEMS.*;
+import com.github.RapidEMS.algo.dp.DrivingPolicy;
+import com.github.RapidEMS.algo.dp.RapidEMS;
 import com.github.RapidEMS.infra.*;
 import com.github.RapidEMS.sim.*;
 import com.github.RapidEMS.sim.stats.*;
@@ -86,7 +88,8 @@ public class GeneralPanel extends ConfigPanel implements ActionListener
 		alwaysOnTop.setState(ConfigDialog.AlwaysOnTop);
 		safeNodeCrossing.setState(SignController.CrossNodesSafely);
 		crossNodes.setState(SimModel.CrossNodes);
-		useCustoms.setState(RoaduserFactory.UseCustoms);
+		//useCustoms.setState(RoaduserFactory.UseCustoms);
+		useCustoms.setState(false);
 		useRapidEMS.setState(true);
 		
 		setSepChar();
@@ -97,7 +100,7 @@ public class GeneralPanel extends ConfigPanel implements ActionListener
 		SignController.CrossNodesSafely = safeNodeCrossing.getState();
 		SimModel.CrossNodes = crossNodes.getState();
 		RoaduserFactory.UseCustoms = useCustoms.getState();
-		Roaduser.useRapidEMS = useRapidEMS.getState();
+		RapidEMS.useRapidEMS = useRapidEMS.getState();
 		
  		getSepChar();
 	}
