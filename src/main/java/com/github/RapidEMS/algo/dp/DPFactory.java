@@ -57,16 +57,16 @@ public class DPFactory
 	  * @param model The SimModel to create the algorithm for
 	  * @param tlc The traffic light controller to co-operate with
 	 */
-  	public DPFactory(SimModel model,TLController tlc)
-	{ 	this.model=model;
-		this.tlc=tlc;
+  	public DPFactory(SimModel model,TLController tlc) {
+		  this.model=model;
+		  this.tlc=tlc;
 	}
   
-	/** Looks up the id of a DP algorithm by its description
-	  * @param algoDesc The description of the algorithm
-	  * @return The id of the algorithm
-	  * @throws java.util.NoSuchElementException If there is no algorithm with that
-	  *        description.
+	/**
+	 * Looks up the id of a DP algorithm by its description
+	 * @param algoDesc The description of the algorithm
+	 * @return The id of the algorithm
+	 * @throws java.util.NoSuchElementException if there is no algorithm with that description.
 	 */
 	public static int getId (String algoDesc)
 	{ 	return StringUtils.getIndexObject(dpDescs,algoDesc);
