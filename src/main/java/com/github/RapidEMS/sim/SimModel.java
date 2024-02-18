@@ -17,7 +17,6 @@
 package com.github.RapidEMS.sim;
 
 import com.github.RapidEMS.Model;
-import com.github.RapidEMS.GLDException;
 
 import com.github.RapidEMS.algo.dp.*;
 import com.github.RapidEMS.algo.tlc.*;
@@ -27,8 +26,6 @@ import com.github.RapidEMS.utils.Arrayutils;
 import com.github.RapidEMS.utils.NumberDispenser;
 import com.github.RapidEMS.xml.*;
 
-import java.awt.Point;
-import java.awt.Color;
 import java.io.IOException;
 import java.util.*;
 
