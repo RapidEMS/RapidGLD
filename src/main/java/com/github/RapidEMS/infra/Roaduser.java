@@ -102,12 +102,6 @@ abstract public class Roaduser implements Selectable, XMLSerializable, TwoStageL
 	{ 	try {return super.clone();} catch(Exception e) {System.out.println(e);}
 		return null;
 	}
-		
-
-
-
-
-
 
 
 
