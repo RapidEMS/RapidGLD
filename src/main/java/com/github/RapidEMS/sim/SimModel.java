@@ -36,36 +36,59 @@ import java.util.*;
  * @version 1.0
  */
 
-public class SimModel extends Model implements XMLSerializable
-{
-	/** The pseudo-random-number-generator we need in this simulation */
-	protected Random generator;	
-	/** The second thread that runs the actual simulation */
-	protected SimModelThread thread;
-	/** The SimController */
-	protected SimController controller;
-	/** The current cycle we're in */
-	protected int curCycle;
-	/** The Driving Policy in this Simulation */
-	protected static DrivingPolicy dp;
-	/** The TrafficLightControlling Algorithm */
-	protected TLController tlc;
-	/** The Thing that makes all Trafficlights shudder */
-	protected SignController sgnctrl;
-	/** Name of the simulation */
-	protected String simName="untitled";
-	/** A boolean to keep track if this sim has already run (ivm initialization) */
-	protected boolean hasRun = false;
-	/** Indicates if roadusers cross nodes or jump over them. */
-	public static boolean CrossNodes = true;
-	/** Indicates whether we are running a series of simulations */
-	protected boolean runSeries = false;
-	protected boolean locked = false;
-	/** The number of steps each of the simulations in a series should make */
-	protected static int numSeriesSteps = 50000;
-	protected static int LOCK_THRESHOLD = 10000;
-	protected static int numSeries = 10;
-	protected int curSeries = 0;
+public class SimModel extends Model implements XMLSerializable {
+    /**
+     * The pseudo-random-number-generator we need in this simulation
+     */
+    protected Random generator;
+    /**
+     * The second thread that runs the actual simulation
+     */
+    protected SimModelThread thread;
+    /**
+     * The SimController
+     */
+    protected SimController controller;
+    /**
+     * The current cycle we're in
+     */
+    protected int curCycle;
+    /**
+     * The Driving Policy in this Simulation
+     */
+    protected static DrivingPolicy dp;
+    /**
+     * The TrafficLightControlling Algorithm
+     */
+    protected TLController tlc;
+    /**
+     * The Thing that makes all Trafficlights shudder
+     */
+    protected SignController sgnctrl;
+    /**
+     * Name of the simulation
+     */
+    protected String simName = "untitled";
+    /**
+     * A boolean to keep track if this sim has already run (ivm initialization)
+     */
+    protected boolean hasRun = false;
+    /**
+     * Indicates if roadusers cross nodes or jump over them.
+     */
+    public static boolean CrossNodes = true;
+    /**
+     * Indicates whether we are running a series of simulations
+     */
+    protected boolean runSeries = false;
+    protected boolean locked = false;
+    /**
+     * The number of steps each of the simulations in a series should make
+     */
+    protected static int numSeriesSteps = 50000;
+    protected static int LOCK_THRESHOLD = 10000;
+    protected static int numSeries = 10;
+    protected int curSeries = 0;
 
 	/**
 	 * Creates second thread
