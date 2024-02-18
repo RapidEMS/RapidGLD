@@ -26,7 +26,7 @@ import java.util.Random;
 
 /**
  *
- * This extension of {@see gld.DrivingPolicy} selects the next lane 
+ * This extension of {@link DrivingPolicy} selects the next lane
  * by finding one which on the shortest path to road user's destination.
  *
  * @author Group Algorithms
