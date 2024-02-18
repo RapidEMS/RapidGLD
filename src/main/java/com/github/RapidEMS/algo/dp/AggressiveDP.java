@@ -37,7 +37,8 @@ public class AggressiveDP extends DrivingPolicy
 	
 	/**
 	 * The constructor for a shortest driving policy. 
-	 * @param m The model which is used
+	 * @param sim The model which is used
+	 * @param _tlc the traffic light controller which is used
 	 */
     
 	public AggressiveDP(SimModel sim, TLController _tlc) {
