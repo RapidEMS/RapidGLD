@@ -27,7 +27,11 @@ import com.github.RapidEMS.utils.StringUtils;
 import java.util.Dictionary;
 import java.util.Hashtable;
 import java.util.Random;
- 
+
+/**
+ * Used to create instances of Driving Policies
+ * for a specific SimModel and TrafficLightController
+ */
 public class DPFactory
 {
 	protected SimModel model;
