@@ -15,9 +15,6 @@
  *------------------------------------------------------------------------*/
 
 package com.github.RapidEMS.algo.dp;
-/** This class can be used to create instances of Driving Policies
-  * for a specific SimModel and TrafficLightController
- */
 
 import com.github.RapidEMS.algo.tlc.TLController;
 import com.github.RapidEMS.infra.InfraException;
