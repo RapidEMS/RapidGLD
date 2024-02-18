@@ -115,10 +115,19 @@ public class SimModel extends Model implements XMLSerializable {
             sgnctrl.setInfrastructure(i);
     }
 
-	/** Returns the current cycle */
-	public int getCurCycle() { return curCycle; }
-	/** Sets the current cycle */
-	public void setCurCycle(int c) { curCycle = c; }
+    /**
+     * Returns the current cycle
+     */
+    public int getCurCycle() {
+        return curCycle;
+    }
+
+    /**
+     * Sets the current cycle
+     */
+    public void setCurCycle(int c) {
+        curCycle = c;
+    }
 
 	/** Returns the current Driving Policy */
 	public static DrivingPolicy getDrivingPolicy() { return dp; }
