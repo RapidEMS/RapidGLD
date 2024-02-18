@@ -34,6 +34,7 @@ public class EditEdgeNodePanel extends ConfigPanel implements ActionListener
 {
 	EdgeNode edgenode;
 	Hyperlink roadLink, nodeLink;
+	Checkbox startNode, endNode;
 	
 	public EditEdgeNodePanel(ConfigDialog cd, EdgeNode e) {
 		super(cd);
@@ -55,12 +56,30 @@ public class EditEdgeNodePanel extends ConfigPanel implements ActionListener
 		nodeLink.addActionListener(this);
 		nodeLink.setBounds(100, 20, 100, 20);
 		add(nodeLink);
+
+		startNode = new Checkbox("StartNode");
+		startNode.setBounds(0, 45, 250, 20);
+		add(startNode);
+
+		endNode = new Checkbox("EndNode");
+		endNode.setBounds(0, 70, 250, 20);
+		add(endNode);
 		
 		setEdgeNode(e);
+	}
+
+	@Override
+	public void ok() {
+		edgenode.setStartNode(startNode.getState());
+		edgenode.setEndNode(endNode.getState());
 	}
 	
 	public void reset() {
 		Road road = edgenode.getRoad();
+
+		startNode.setState(edgenode.isStartNode());
+		endNode.setState(edgenode.isEndNode());
+
 		if (road != null) {
 			roadLink.setText(road.getName());
 			roadLink.setEnabled(true);
@@ -87,5 +106,7 @@ public class EditEdgeNodePanel extends ConfigPanel implements ActionListener
 			confd.selectObject(edgenode.getRoad());
 		else if (source == nodeLink)
 			confd.selectObject(edgenode.getRoad().getOtherNode(edgenode));
+		else if (source == startNode) edgenode.setStartNode(startNode.getState());
+		else if (source == endNode) edgenode.setEndNode(endNode.getState());
 	}
 }

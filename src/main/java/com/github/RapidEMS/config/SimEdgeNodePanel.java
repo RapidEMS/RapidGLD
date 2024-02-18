@@ -41,6 +41,7 @@ public class SimEdgeNodePanel extends ConfigPanel implements ItemListener, Actio
 	TextField spawnFreq;
 	Choice spawnTypes;
 	Button setSpawn;
+	Checkbox startNode, endNode;
 	
 	Hyperlink wqlLink, twtLink, ruaLink, roadLink, nodeLink;
 	Label[] queue;
@@ -126,13 +127,22 @@ public class SimEdgeNodePanel extends ConfigPanel implements ItemListener, Actio
 			queue[i] = lab;
 		}
 
+		startNode = new Checkbox("StartNode");
+		startNode.setBounds(0, 165, 250, 20);
+		add(startNode);
 
+		endNode = new Checkbox("EndNode");
+		endNode.setBounds(0, 190, 250, 20);
+		add(endNode);
 
 		setEdgeNode(e);
 	}
 
 	public void reset() {
 		setSpawnFreq();
+		startNode.setState(edgenode.isStartNode());
+		endNode.setState(edgenode.isEndNode());
+
 		try {
 			int nrtypes = RoaduserFactory.statArrayLength();
 			int[] nrwaiting = new int[nrtypes];
@@ -161,24 +171,28 @@ public class SimEdgeNodePanel extends ConfigPanel implements ItemListener, Actio
 
 	public void setSpawnType() {
 		try {
-			SimModel sm = (SimModel)confd.getController().getModel();
+			SimModel sm = (SimModel) confd.getController().getModel();
 			float fr = Float.parseFloat(spawnFreq.getText());
-			String rutype = RoaduserFactory.getDescByType(getSpawnType());
-			System.out.println(rutype + ": " + fr);
 			sm.setSpawnFrequency(edgenode, getSpawnType(), fr);
-		}
-		catch (NumberFormatException ex) {
+		} catch (NumberFormatException ex) {
 			confd.showError("You must enter a float");
 		}
 	}
-		
-	
+
+	@Override
+	public void ok() {
+		edgenode.setStartNode(startNode.getState());
+		edgenode.setEndNode(endNode.getState());
+	}
+
 	public void setEdgeNode(EdgeNode e) {
 		edgenode = e;
 		confd.setTitle(edgenode.getName());
 		reset();
 		setSpawnType();
-		
+		edgenode.setStartNode(startNode.getState());
+		edgenode.setEndNode(endNode.getState());
+
 		Road road = edgenode.getRoad();
 		if (road != null) {
 			roadLink.setText(road.getName());
@@ -197,6 +211,8 @@ public class SimEdgeNodePanel extends ConfigPanel implements ItemListener, Actio
 	public void itemStateChanged(ItemEvent e) {
 		Object source = e.getItemSelectable();
 		if (source == spawnTypes) setSpawnFreq();
+		else if (source == startNode) startNode.setState(edgenode.isStartNode());
+		else if (source == endNode) endNode.setState(edgenode.isEndNode());
 	}
 
 	/** Returns the currently selected roaduser type */	
@@ -211,6 +227,8 @@ public class SimEdgeNodePanel extends ConfigPanel implements ItemListener, Actio
 		Object source = e.getSource();
 		
 		if (source == setSpawn || source == spawnFreq) setSpawnType();
+		else if (source == startNode) edgenode.setStartNode(startNode.getState());
+		else if (source == endNode) edgenode.setEndNode(endNode.getState());
 		else if (source == wqlLink) track(TrackerFactory.SPECIAL_QUEUE);
 		else if (source == twtLink) track(TrackerFactory.SPECIAL_WAIT);
 		else if (source == ruaLink) track(TrackerFactory.SPECIAL_ROADUSERS);
