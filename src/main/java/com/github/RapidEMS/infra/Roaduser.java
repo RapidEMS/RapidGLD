@@ -316,8 +316,8 @@ abstract public class Roaduser implements Selectable, XMLSerializable, TwoStageL
  
  	public void loadSecondStage (Dictionary dictionaries) throws XMLInvalidInputException,XMLTreeException
  	{	Dictionary nodeDictionary=(Dictionary)(dictionaries.get("node"));
-   		startNode=(Node)(nodeDictionary.get(new Integer(loadData.startNodeId)));
-   		destNode=(Node)(nodeDictionary.get(new Integer(loadData.destNodeId)));
+   		startNode=(Node)(nodeDictionary.get(Integer.valueOf(loadData.startNodeId)));
+   		destNode=(Node)(nodeDictionary.get(Integer.valueOf(loadData.destNodeId)));
  	}
 
 }
