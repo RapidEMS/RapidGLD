@@ -90,30 +90,30 @@ public class SimModel extends Model implements XMLSerializable {
     protected static int numSeries = 10;
     protected int curSeries = 0;
 
-	/**
-	 * Creates second thread
-	 */	
-	public SimModel() {
-		thread = new SimModelThread();
-		thread.start();
-		curCycle = 0;
-		generator = new Random();
-		sgnctrl = new SignController(tlc, infra);
-	}
-	
-	public void setSimController(SimController sc) {
-		controller = sc;
-	}		
-	
-	public void setInfrastructure(Infrastructure i) {
-		pause();
-		
-		super.setInfrastructure(i);
-		if(tlc!=null)
-			tlc.setInfrastructure(i);
-		if(sgnctrl!=null)
-			sgnctrl.setInfrastructure(i);
-	}
+    /**
+     * Creates second thread
+     */
+    public SimModel() {
+        thread = new SimModelThread();
+        thread.start();
+        curCycle = 0;
+        generator = new Random();
+        sgnctrl = new SignController(tlc, infra);
+    }
+
+    public void setSimController(SimController sc) {
+        controller = sc;
+    }
+
+    public void setInfrastructure(Infrastructure i) {
+        pause();
+
+        super.setInfrastructure(i);
+        if (tlc != null)
+            tlc.setInfrastructure(i);
+        if (sgnctrl != null)
+            sgnctrl.setInfrastructure(i);
+    }
 
 	/** Returns the current cycle */
 	public int getCurCycle() { return curCycle; }
