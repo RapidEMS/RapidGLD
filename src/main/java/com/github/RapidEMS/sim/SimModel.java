@@ -30,7 +30,6 @@ import java.io.IOException;
 import java.util.*;
 
 /**
- *
  * The heart of the simulation.
  *
  * @author Group Model
