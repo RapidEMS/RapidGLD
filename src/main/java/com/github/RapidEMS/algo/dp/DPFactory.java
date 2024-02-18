@@ -44,7 +44,7 @@ public class DPFactory
 		"Least busy shortest path",
 		"Aggressive",
 		"Colearning"		
-		};
+	};
 	
 	protected static final String[] xmlNames = {
 		ShortestPathDP.shortXMLName,
