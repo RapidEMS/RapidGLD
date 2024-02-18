@@ -90,6 +90,7 @@ public class RoaduserFactory
 	 */
  	public static Roaduser genRoaduser(int type, Node start, Node dest, int pos) throws InfraException
 	{
+
 		if (UseCustoms)
 		{
 			Roaduser ru = CustomFactory.genRoaduser(type, start, dest, pos);
