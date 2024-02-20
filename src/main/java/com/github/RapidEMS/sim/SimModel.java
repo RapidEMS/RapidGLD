@@ -474,7 +474,6 @@ public class SimModel extends Model implements XMLSerializable {
                         Sign targetSign = sign;
                         if (RapidEMS.useRapidEMS) {
                             if (roadUser instanceof Ambulance) {
-                                System.out.println("Instance of Ambulance Found");
                                 Drivelane leftLane = RapidEMS.getLeftLane(lane);
                                 if (RapidEMS.moveLeft(leftLane, lane, roadUser)) {
                                     targetLane = leftLane;
@@ -507,7 +506,6 @@ public class SimModel extends Model implements XMLSerializable {
                     Sign targetSign = sign;
                     if (RapidEMS.useRapidEMS) {
                         if (roadUser instanceof Ambulance) {
-                            System.out.println("Instance of Ambulance Found");
                             Drivelane leftLane = RapidEMS.getLeftLane(lane);
                             if (RapidEMS.moveLeft(leftLane, lane, roadUser)) {
                                 targetLane = leftLane;

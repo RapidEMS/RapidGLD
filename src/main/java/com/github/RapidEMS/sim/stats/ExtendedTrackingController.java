@@ -91,6 +91,7 @@ public class ExtendedTrackingController extends TrackingController
 				CheckboxMenuItem[] citems = ruTypeCM.getItems();
 				for(int i=0; i<citems.length; i++) {
 					int statIndex = RoaduserFactory.getStatIndexByDesc(citems[i].getLabel());
+					System.out.println(citems[i].getLabel() + " " + statIndex);
 					extView.showGraph(statIndex, citems[i].getState());
 				}
 			}

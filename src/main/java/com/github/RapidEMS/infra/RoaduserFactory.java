@@ -116,6 +116,14 @@ public class RoaduserFactory
 		return genRoaduser(type, null, null, 0);
 	}
 
+	public static int getConcreteTypeByDesc(String desc) {
+		for (int i=0; i<concreteTypeDescs.length; ++i)
+			if (desc.equals(concreteTypeDescs[i]))
+				return concreteTypes[i];
+		return 0;
+	}
+
+
 	/** 
 	* Seeks the type number of a description of a Roaduser
 	* @param desc Description of the Roaduser type.
@@ -201,6 +209,6 @@ public class RoaduserFactory
 	/** Returns the statIndex belonging to a given roaduser description. */
 	public static int getStatIndexByDesc(String desc)
 	{
-		return ruTypeToStatIndex(getTypeByDesc(desc));
+		return getConcreteTypeByDesc(desc);
 	}
 }

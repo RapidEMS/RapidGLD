@@ -245,7 +245,7 @@ public class Validation
 				System.out.println("Now checking for type:"+types[j]+" there are "+dests.length);
 				if(dests.length>0) {
 					//float freq = types[j] == RoaduserFactory.AMBULANCE ? 0.01f : 0.00f;
-					float freq = types[j] == RoaduserFactory.BUS ? 0.01f : 0.05f;
+					float freq = types[j] == RoaduserFactory.BUS || types[j] == RoaduserFactory.AMBULANCE ? 0.01f : 0.04f;
 					spawn[ruTypeCount] = new SpawnFrequency(types[j], freq);
 					//System.out.println("Added a spawn freq for type:"+types[j]+"(num_types:"+types.length+") from "+edges[i]);
 					ruTypeCount++;

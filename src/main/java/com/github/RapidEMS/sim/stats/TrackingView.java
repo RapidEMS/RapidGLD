@@ -237,12 +237,12 @@ public abstract class TrackingView extends Canvas implements Observer
 			g.setColor(Color.cyan);
 			g.drawLine((int)(highlightIndex * xStep) + 30, 0, (int)(highlightIndex * xStep) + 30, h);
 			g.setColor(Color.black);
-			g.drawString(highlightCycle, w - 80, 15);
+			g.drawString(highlightCycle, w - 120, 15);
 			int y = 35;
 			for(int num=0; num<MAX_TRACK; num++)
 				if(show[num]) {
 					g.setColor(colors[num]);
-					g.drawString(highlightText[num], w - 80, y);
+					g.drawString(highlightText[num], w - 120, y);
 					y += 15;
 				}
 		}
