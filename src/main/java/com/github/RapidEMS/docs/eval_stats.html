@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>Green Light District :: Documentation :: Evaluation :: Statistics</TITLE>
+<LINK REL="stylesheet" TYPE="text/css" HREF="sp2001isg.css">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#33FF33" VLINK="#FF6600" ALINK="#FF0000">
+<H4>Green Light District :: Documentation :: Evaluation :: Statistics</H4>
+
+<TABLE WIDTH="760" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+<TR>
+<TD><IMG SRC="screens/blank.gif" WIDTH="140" HEIGHT="10"></TD>
+<TD><IMG SRC="screens/blank.gif" WIDTH="660" HEIGHT="10"></TD>
+</TR>
+
+<TR>
+<TD VALIGN="top">
+<P><A HREF="index.html">Welcome</A></P>
+
+<P><A HREF="editor.html">1. Editor</A><BR>
+ <A HREF="simulator.html">2. Simulator</A><BR>
+ <A HREF="evaluation.html">3. Evaluation Tools</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="10" HEIGHT="10"><A HREF="eval_data.html">a. Data</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="10" HEIGHT="10"><A HREF="eval_stats.html">b. Statistics</A><BR>
+ <A HREF="example.html">4. An Example Session</A><BR>
+ <A HREF="algorithms.html">5. Algorithms</A><BR>
+</P>
+
+<P><A HREF="specs/index.html" TARGET="_blank">Specifications</A><BR>
+<BR>
+</P>
+
+<P><A HREF="definitions.html">Definitions</A><BR>
+<BR>
+</P>
+
+<P><A HREF="beyond.html">Beyond GLD</A><BR>
+<BR>
+</P>
+
+<P><A HREF="about.html">About</A><BR>
+</P>
+</TD>
+<TD VALIGN="top">
+<H2>Statistical Tools</H2>
+
+<P>Analysis with simulation is easiest by switching on the tracking windows, and letting the simulation run.<BR>
+ As maps are initially void of road users, the first bits of data (on map Simple: about 50 to 100 cycles) are of little use.</P>
+
+<P>Statistics can be shown per node, or for all nodes, for all types of road users or for specific ones (car, cyclist, bus/truck).<BR>
+ Toggling the in-view statistics can be an easy way to watch the queue length and see wet her the obtained data isn't malformed because road users cannot get in at some edge node, or you can keep an
+eye on the Total Waiting Queue Length graph.</P>
+
+ <IMG SRC="screens/statistics.gif" ALT="Table statistics"><br>
+
+<BR>
+<BR>
+<BR>
+<TABLE WIDTH="600" BORDER="0" CELLSPACING="10" CELLPADDING="10">
+<TR>
+<TD>
+<H2>Guide to understanding Statistics<BR>
+ (with Longest Queue TLC as example)</H2>
+</TD>
+</TR>
+
+<TR>
+<TD><B>(Map: Simple) Average Junction Waiting Time</B><BR>
+<BR>
+The first road users are able to advance quickly.<BR>
+ After, waiting time stabilizes at 1 cycle.<BR>
+ Check the simulator window when using such TLC as Longest Queue; one road may be blocked much more than others, and the data from that one will "drag down" the overall average.<BR>
+If switching to Random TLC improves the average, the infrastructure may be badly designed.</TD>
+<TD><IMG SRC="screens/simple_sp_lq_ajwt.gif"></TD>
+</TR>
+
+<TR>
+<TD><B>(Map: Simple) Total Road Users Arrived</B><BR>
+<BR>
+ Rises sharply when road users meet at junction and their flow has to be regulated by halting some. Also, some may have to wait behind others at a traffic light, and have to wait more when they're
+first in queue.<BR>
+ In the end, this is what you're most interested in, but the other statistics show more precisely what is wrong when the average is high.</TD>
+<TD><IMG SRC="screens/simple_sp_lq_att.gif"></TD>
+</TR>
+
+<TR>
+<TD><B>(Map: Simple) Average Trip Waiting Time</B><BR>
+<BR>
+ Checking the simulator window, again, will show whether this average is evenly divided, or whether there is blocking up at a junction.<BR>
+ It may be useful to set the spawning frequencies of all but one edge node to 0, so that the flow from one source can be analyzed. When doing this, choose a TLC other than Random, as this causes
+waiting for road users even when there is no nee.</TD>
+<TD><IMG SRC="screens/simple_sp_lq_atwt.gif"></TD>
+</TR>
+
+<TR>
+<TD><B>(Map: Simple) Total Waiting Queue Length</B><BR>
+<BR>
+Info value depends on the infrastructure: with only a few junctions and long roads, this fluctuates sharply.<BR>
+This can show whether the other statistics are giving a good insight in the performance of an algorithm, because traffic might be flowing fine, but some edge nodes might have long queues waiting
+outside the map to get in.</TD>
+<TD><IMG SRC="screens/simple_sp_lq_twql.gif"></TD>
+</TR>
+</TABLE>
+
+<HR WIDTH="90%" ALIGN="LEFT">
+<TABLE WIDTH="600" BORDER="0" CELLSPACING="10" CELLPADDING="10">
+<TR>
+<TD><B>(Map: Complex) Average Junction Waiting Time</B><BR>
+<BR>
+The average here is lower than for map Simple (see above) because there are more junctions than edge nodes, and the spawning frequencies' created road users are divided more.</TD>
+<TD><IMG SRC="screens/complex_sp_lq_ajwt.gif"></TD>
+</TR>
+
+<TR>
+<TD><B>(Map: Complex) Total Road Users Arrived</B><BR>
+<BR>
+ Stabilizes rigidly here after 500 cycles, perhaps because the path length is greater than the fluctuations caused by waiting.</TD>
+<TD><IMG SRC="screens/complex_sp_lq_att.gif"></TD>
+</TR>
+
+<TR>
+<TD><B>(Map: Complex) Average Trip Waiting Time</B><BR>
+<BR>
+This shows that the TLC works for this map, as it is adapting.<BR>
+Change spawning frequencies and see if it is able to recover, or if its adaptability was a lucky combination of spawning frequencies.</TD>
+<TD><IMG SRC="screens/complex_sp_lq_atwt.gif"></TD>
+</TR>
+
+<TR>
+<TD><B>(Map: Complex) Total Waiting Queue Length</B><BR>
+<BR>
+Queues are kept short most of the time, as they should be.<BR>
+When they are short, proportionally more road users have interaction with the traffic lights, and this may benefit overall performance.</TD>
+<TD><IMG SRC="screens/complex_sp_lq_twql.gif"></TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+
+<TR>
+<TD COLSPAN="2">&nbsp;</TD>
+</TR>
+
+<TR>
+<TD>&nbsp;</TD>
+<TD VALIGN="top" ALIGN="right">&copy; 2001 SP2001-ISG</TD>
+</TR>
+</TABLE>
+
+<P>&nbsp;</P>
+</BODY>
+</HTML>
+

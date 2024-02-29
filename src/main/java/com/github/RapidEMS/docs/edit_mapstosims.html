@@ -1,0 +1,65 @@
+<HTML>
+<HEAD>
+<TITLE>Green Light District :: Documentation :: Editor :: From maps to sims</TITLE>
+<LINK REL=stylesheet TYPE="text/css" HREF="sp2001isg.css">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#33FF33" VLINK="#FF6600" ALINK="#FF0000">
+<H4>Green Light District :: Documentation :: Editor :: From maps to sims</H4>
+<TABLE WIDTH="760" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+  <TR> 
+    <TD><IMG src="screens/blank.gif" WIDTH="140" HEIGHT="10"></TD>
+    <TD><IMG src="screens/blank.gif" WIDTH="660" HEIGHT="10"></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"> 
+      <P><A HREF="index.html">Welcome</A></P>
+      <P>
+			<A HREF="editor.html">1. Editor</A><BR>
+   	     <IMG src="screens/blank.gif" WIDTH="10" HEIGHT="10"><A HREF="edit_interface.html">a.  Interface</A><BR>
+   	     <IMG src="screens/blank.gif" WIDTH="10" HEIGHT="10"><A HREF="edit_use.html">b. Usage</A><BR>
+   	     <IMG src="screens/blank.gif" WIDTH="10" HEIGHT="10"><A HREF="edit_mapstosims.html">c. From maps to sims</A><BR>
+   	   <A HREF="simulator.html">2. Simulator</A><BR>
+   	   <A HREF="evaluation.html">3. Evaluation Tools</A><BR>
+   	   <A HREF="example.html">4. An Example Session</A><BR>
+   	   <A HREF="algorithms.html">5. Algorithms</A><BR>
+		</P>
+      <P>
+		<A HREF="specs/index.html" TARGET="_blank">Specifications</A><BR>
+        <BR></P>
+      <P><A HREF="definitions.html">Definitions</A><BR>
+        <BR></P>
+      <P><A HREF="beyond.html">Beyond GLD</A><BR>
+        <BR>
+      </P>
+      <P><A HREF="about.html">About</A><BR>
+      </P>
+    </TD>
+
+    <TD VALIGN="top"> 
+      <h2>From Editor maps to GLD Simulations</h2>
+
+
+      <P>After you have created a map, run the Validation to check for inconsistencies.
+	Id numbers will appear next to Nodes, which will be of use later on in Statistics, or an Error
+	dialog pointing you to errors.<br>
+	You will have to correct errors manually, by following the pointer ID's to the villain node and creating extra roads. Edge nodes will have to be connected to precisely one junction, and junctions should not form dead ends with edge nodes.<br>
+	Also, instead of using junctions to wrap around existing infrastructure sections, make turns. This is not only more consistent than artificial "junctions" for evaluation, but will display more logically.<br>
+	When expanding an infrastructure it is common to have to remove
+	Now, with your map or one chosen out of the ready made maps, you are ready to start simulating.
+	Start the GLD Simulator and load your chosen map.</P>
+
+	<br><img src="screens/validate.gif" align="right" width="300" height="200" alt="The Validation Error Dialog"></img>
+
+	<br><img src="screens/error_node.gif" alt="An error: no road for a node"></img>
+
+
+     </TD>
+  </TR> 
+<TR><TD COLSPAN="2">&nbsp;</TD></TR><TR>
+    <TD>&nbsp;</TD>
+    <TD VALIGN="top" ALIGN="right">&copy; 2001 SP2001-ISG</TD>
+  </TR>
+</TABLE>
+<P>&nbsp;</P>
+</BODY>
+</HTML>

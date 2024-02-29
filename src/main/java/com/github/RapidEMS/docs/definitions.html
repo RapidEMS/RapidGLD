@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>Green Light District :: Documentation :: Definitions</TITLE>
+<LINK REL="stylesheet" TYPE="text/css" HREF="sp2001isg.css">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#33FF33" VLINK="#FF6600" ALINK="#FF0000">
+<H4>Green Light District :: Documentation :: Definitions</H4>
+
+<TABLE WIDTH="760" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+  <TR> 
+    <TD><IMG src="screens/blank.gif" WIDTH="140" HEIGHT="10"></TD>
+    <TD><IMG src="screens/blank.gif" WIDTH="660" HEIGHT="10"></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"> 
+      <P><A HREF="index.html">Welcome</A></P>
+      <P>
+			<A HREF="editor.html">1. Editor</A><BR>
+   	   <A HREF="simulator.html">2. Simulator</A><BR>
+   	   <A HREF="evaluation.html">3. Evaluation Tools</A><BR>
+   	   <A HREF="example.html">4. An Example Session</A><BR>
+   	   <A HREF="algorithms.html">5. Algorithms</A><BR>
+		</P>
+      <P>
+		<A HREF="specs/index.html" TARGET="_blank">Specifications</A><BR>
+        <BR></P>
+      <P><A HREF="definitions.html">Definitions</A><BR>
+        <BR></P>
+      <P><A HREF="beyond.html">Beyond GLD</A><BR>
+        <BR>
+      </P>
+      <P><A HREF="about.html">About</A><BR>
+      </P>
+    </TD>
+
+    <TD VALIGN="top">
+	
+      <h2>Definitions of terms and objects in GLD</h2>
+
+      <P>Some simulated objects have a more restricted or augmented signification then in reality:</P>
+	<br>
+	<br>
+	<br>
+	
+	<p><ul>
+			
+	<li><b>Agent:</b> road users and traffic lights. These interact in the set
+	infrastructure by using the data they hold on it and other agents to
+	achieve their goal. When the data that is collected by an agent is used	by other agents, of other types, their learning behaviour is called a co-learning strategy. <br><br>
+		
+	<li><b>Cycle:</b> the distinct time measurement unit, according to these speeds (animation and tracking speed depending on algorithm and computer system):
+		<ul>
+			<li>Low: 1 cycle/second
+			<li>Medium: 2.5cycles/second
+			<li>High: 20 cycles/second
+			<li>Maximum: 100 cycles/second
+		</ul> <br>
+
+	<li><b>ID:</b> each node is assigned an integer during validation to uniquely identify it.
+		Used by validation to indicate infrastructure ommisions and in statistics to point info. ID numbers start at 0; special nodes are numbered first, afterwards normal nodes. <br>
+	<IMG src="screens/ID.gif"><br><br>
+	<li><b>Infrastructure:</b> nodes, with traffic lights or rules, connected by roads. Validation decides if the whole fits technical rules, but the user holds ultimate responsibility. In addition to sound map-making, tweaking the spawn frequencies is neccesary to gain usefull info from the statistics of a simulation. <br><br>
+
+	<li><b>Map:</b> a valid infrastructure containing nodes and roads properly linked. Further usefullness may be defined by the mapmaker having given it proper traffic lights or rules, and balancing the type and number of road sides and edge nodes. Only maps can be loaded is the simulator because they are known to be valid. <br><br>
+
+	<li><b>Node:</b> a junction between 1-4 roads.
+		<ul>
+		<li><b>Edge Node:</b> has only one road and is the only node type with spawns road users, and is also the only node type that can be tweaked with in the simulator, by changing the spawn frequency.
+		<li><b>Junction:</b> links roads and provides rules or traffic lights for control.
+		<li><b>Spawning Frequency:</b> value between 0 and 1 indicating how many road users will be initiated from the edge node the value belomgs to per cycle. A value of 1 indicates one per cycle, 0.5 indicates 1 per 2 cycles, and so on.
+		<li><b>Traffic Light:</b> each lane link to a junction node must have one, or have rules.
+		<li><b>Net-Tunnel:</b> node that provides network connectivity, so that complex cities can be simulated on a network - road users will "dissapear" when they go onto this node and "appear" on a net-tunnel node on a nother machine.
+		<li><b>No Signs:</b> node without traffic lights - has only rules. Useful for forcing certain traffic flows.
+		</ul> <br>
+	
+	<li><b>Reinforcement Learning:</b> a learning method that increases effectivenes by trial and error. In the case of GLD, performance of agents is optimized by choosing a configuration that minimizes waiting time when multiple configurations have been tried and one proves smarter. This is done time and again, except for the shortest paths, as there are any number of possible infrastructures and traffic flows. <br><br>
+
+	<li><b>Road:</b> must always link two nodes. Road sides and borders are separated bij a black line, and borders between Lanes bij a grey line. Turns have only a visual representation and no influence on the behaviour of road users, because these have no acceleration (they don't slow down in turns).
+		<ul>
+		<li><b>Lanes:</b> between 0 and 4 per road side.
+		<li><b>Rules:</b> in the absence of traffic lights, these determine possible routes at junctions.
+			<ul>
+			<li>Left: whether a road user on the lane that has this property is allowed to take a left turn at the next node (only applicable for junction nodes).
+			<li>Straight Ahead: same for ahead.
+			<li>Right: same for right turn.
+			</ul>
+		<li><b>Side:</b> one for each direction. A side may have 0 lanes, in which case it is void and never used.
+		<li><b>Space:</b> Road users occupy space on a road; a full road can temporarily not accomodate more road users even if these have a green light to proceed upon it.
+		</ul> <br>
+
+	<li><b>Road User:</b> symbolises a car, truck, or bus. Road users start (spawn) at an edge node and follow a certain shortest path to reach their destination, observing the rules at a road and traffic lights. At a junction, the traffic light setting, shortest path, eventual rules and the availability of road space decides whether it moves on. A road user is not intelligent, its path is.
+		<ul>
+		<li><b>Automobile:</b> subset of road users with a motorized vehicle - not allowed on the lanes reserved for cyclists.
+		<li><b>Bus:</b> has a greater size than normal cars, and may gain priority at a junction
+			because it carries more passengers.
+		<li><b>Car:</b> has a size of 2 and a normal speed of 2.
+		<li><b>Cyclist:</b> has a size of 1 and a normal speed of 1.
+		<li><b>Passenger:</b> used in some algorithms to give priority to road users that transport more.
+		<li><b>Truck:</b> same as bus, only it gains no priority for extra passengers.
+		</ul> <br>
+
+	<li><b>Traffic Light:</b> represented by one dot at the end of a lane's direction in a junction, which can turn red or green, green meaning proceed if your destination road
+	has free space, red meaning stay. Road users always follow the rules of a light.<br>
+	<IMG src="screens/tl_red.gif">
+	<IMG src="screens/tl_green.gif">
+		<ul>
+		<li><b>Combinations:</b> (assuming 4 roads connected to the junction):
+			<ul>
+			<li>Traffic on 2 facing sides is allowed to move straight or take a right turn, 
+			and the others are disallowed (2 possible combinations).
+			<li>Traffic on 1 side is allowed on both lanes (4 possible combinations).
+			</ul>		
+		</ul> <br>
+	</ul>
+	</p>
+	
+	<br>
+	<br>
+
+	<br>
+
+     </TD>
+  </TR> 
+<TR><TD COLSPAN="2">&nbsp;</TD></TR><TR>
+    <TD>&nbsp;</TD>
+    <TD VALIGN="top" ALIGN="right">&copy; 2001 SP2001-ISG</TD>
+  </TR>
+
+</TABLE>
+
+<P>&nbsp;</P>
+</BODY>
+</HTML>
+

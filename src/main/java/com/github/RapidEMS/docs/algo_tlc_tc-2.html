@@ -1,0 +1,117 @@
+<HTML>
+<HEAD>
+<TITLE>Green Light District :: Documentation :: Algorithms :: Traffic Light Controllers :: TC-2</TITLE>
+<LINK REL=stylesheet TYPE="text/css" HREF="sp2001isg.css">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#33FF33" VLINK="#FF6600" ALINK="#FF0000">
+<H4>Green Light District :: Documentation :: Algorithms :: Traffic Light Controllers :: TC-2</H4>
+<TABLE WIDTH="760" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+  <TR> 
+    <TD><IMG src="screens/blank.gif" WIDTH="140" HEIGHT="10"></TD>
+    <TD><IMG src="screens/blank.gif" WIDTH="660" HEIGHT="10"></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"> 
+      <P><A HREF="index.html">Welcome</A></P>
+      <P>
+		<A HREF="editor.html">1. Editor</A><BR>
+		<A HREF="simulator.html">2. Simulator</A><BR>
+		<A HREF="evaluation.html">3. Evaluation Tools</A><BR>
+		<A HREF="example.html">4. An Example Session</A><BR>
+		<A HREF="algorithms.html">5. Algorithms</A><BR>
+		
+		<IMG src="screens/blank.gif" WIDTH="10" HEIGHT="10"><A HREF="algo_dp.html">a. Driving policies</A><BR>
+
+			<IMG src="screens/blank.gif" WIDTH="10" HEIGHT="10"><A HREF="algo_tlc.html">b. Traffic light controllers</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_rnd.html">1) Random</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_mc.html">2) Most Cars</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_rld.html">3) RLD</A><BR>
+<BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_hill.html">4) Hillclimbing</A><BR>
+<BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_lq.html">5) Longest Queue</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_rlq.html">6) Relative LQ</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_bf.html">7) Best first</A><BR>
+<BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_tc-1.html">8) TC-1</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_tc-2.html">9) TC-2</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_tc-3.html">10) TC-3</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_tc-1++.html">11) TC-1++</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_tc-2++.html">12) TC-2++</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_tc-3++.html">13) TC-3++</A><BR>
+<BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_acgj-1.html">14) ACGJ-1</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_acgj-2.html">15) ACGJ-2</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_acgj-3.html">16) ACGJ-3</A><BR>
+<BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_neural.html">17) GenNeural</A><BR>	</A><BR>
+		</P>
+      <P>
+		<A HREF="specs/index.html" TARGET="_blank">Specifications</A><BR>
+        <BR></P>
+      <P><A HREF="definitions.html">Definitions</A><BR>
+        <BR></P>
+      <P><A HREF="beyond.html">Beyond GLD</A><BR>
+        <BR>
+      </P>
+      <P><A HREF="about.html">About</A><BR>
+      </P>
+    </TD>
+
+    <TD VALIGN="top"> 
+
+      <h2>TC-2</h2>
+	<p>TC-2 is a reinforcement learning algorithm which will
+        try to find an optimal policy for the traffic lights in the manner of
+        TC-1. But now the number of road users at the next traffic
+        light is communicated. This number is encoded in the
+        transition chance and is used for the Q(green)
+        calculation.</p>
+
+	<!--<p>
+	Info on the number of road users in line for the next possible traffic light is communicated
+	and used to compute P for the first road user in line at the current traffic light only. </p>
+	<p>P now takes K into account.
+	Only for a green light, Q is computed by summing over P(R + V) of traffic lights with their P.
+	For other cars, the Q of TC1 is used.</p>
+	<p>Thus, TC2 only looks ahead one single traffic light in the future. Predicting waiting times of other
+	road users in line does not take immediate advantage of communciation, though other "information"
+	is "passed on" by road users moving to the next traffic light, and being counted there.
+	</p>-->
+
+
+	<br><br><br><p>
+	<table WIDTH="600" BORDER="0" CELLSPACING="10" CELLPADDING="10">
+	<caption><h2>Example Performance Statistics<h2></caption>
+	<tr><td><b>(Map: Simple) Average Junction Waiting Time	</b><br><br>
+		</td><td><IMG src="screens/simple_sp_tc2_ajwt.gif"></td></tr>
+	<tr><td><b>(Map: Simple) Total Road Users Arrived			</b><br><br>
+		</td><td><IMG src="screens/simple_sp_tc2_att.gif"></td></tr>
+	<tr><td><b>(Map: Simple) Average Trip Waiting Time		</b><br><br>
+		</td><td><IMG src="screens/simple_sp_tc2_atwt.gif"></td></tr>
+	<tr><td><b>(Map: Simple) Total Waiting Queue Length		</b><br><br>
+		</td><td><IMG src="screens/simple_sp_tc2_twql.gif"></td></tr>
+	</table><HR WIDTH="90%" ALIGN="LEFT">
+	<table WIDTH="600" BORDER="0" CELLSPACING="10" CELLPADDING="10">
+	<tr><td><b>(Map: Complex) Average Junction Waiting Time	</b><br><br>
+		</td><td><IMG src="screens/complex_sp_tc2_ajwt.gif"></td></tr>
+	<tr><td><b>(Map: Complex) Total Road Users Arrived			</b><br><br>
+		</td><td><IMG src="screens/complex_sp_tc2_att.gif"></td></tr>
+	<tr><td><b>(Map: Complex) Average Trip Waiting Time		</b><br><br>
+		</td><td><IMG src="screens/complex_sp_tc2_atwt.gif"></td></tr>
+	<tr><td><b>(Map: Complex) Total Waiting Queue Length		</b><br><br>
+		</td><td><IMG src="screens/complex_sp_tc2_twql.gif"></td></tr>
+	</table>
+
+	<p>Thanks to Marco Wiering, Utrecht University.</p>
+
+      </TD>
+  </TR> 
+<TR><TD COLSPAN="2">&nbsp;</TD></TR><TR>
+    <TD>&nbsp;</TD>
+    <TD VALIGN="top" ALIGN="right">&copy; 2001 SP2001-ISG</TD>
+  </TR>
+</TABLE>
+<P>&nbsp;</P>
+</BODY>
+</HTML>

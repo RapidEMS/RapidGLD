@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>Green Light District :: Documentation :: Algorithms :: Driving policies :: Co-learning</TITLE>
+<LINK REL="stylesheet" TYPE="text/css" HREF="sp2001isg.css">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#33FF33" VLINK="#FF6600" ALINK="#FF0000">
+<H4>Green Light District :: Documentation :: Algorithms :: Driving policies :: Co-learning</H4>
+
+<TABLE WIDTH="760" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+<TR>
+<TD><IMG SRC="screens/blank.gif" WIDTH="140" HEIGHT="10"></TD>
+<TD><IMG SRC="screens/blank.gif" WIDTH="660" HEIGHT="10"></TD>
+</TR>
+
+<TR>
+<TD VALIGN="top">
+<P><A HREF="index.html">Welcome</A></P>
+
+<P><A HREF="editor.html">1. Editor</A><BR>
+ <A HREF="simulator.html">2. Simulator</A><BR>
+ <A HREF="evaluation.html">3. Evaluation Tools</A><BR>
+ <A HREF="example.html">4. An Example Session</A><BR>
+ <A HREF="algorithms.html">5. Algorithms</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="10" HEIGHT="10"> <A HREF="algo_dp.html">a. Driving policies</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_dp_sp1.html">1) Shortest Path</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_dp_sp2.html">2) Smarter SP</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_dp_cl.html">3) Co-learning</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_dp_agr.html">4) Aggressive</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="10" HEIGHT="10"> <A HREF="algo_tlc.html">b. Traffic light controllers</A><BR>
+</P>
+
+<P><A HREF="specs/index.html" TARGET="_blank">Specifications</A><BR>
+<BR>
+</P>
+
+<P><A HREF="definitions.html">Definitions</A><BR>
+<BR>
+</P>
+
+<P><A HREF="beyond.html">Beyond GLD</A><BR>
+<BR>
+</P>
+
+<P><A HREF="about.html">About</A><BR>
+</P>
+</TD>
+<TD VALIGN="top">
+<H2>Co-learning</H2>
+
+<P>Road users choose their next lane when crossing a junction so as to minimize probable waiting time at the next junction.</P>
+
+<P>If a next lane has traffic lights, a co-learn value is requested from the traffic light control algorithm, if its is the kind to compute co-learning values. Along with this the road users sends a
+value for itself to the controller so other road users may benefit from it.</P>
+
+<P>Co-learning will greatly improve the distribution of road users on a map with many possible shortest paths (say, a grid-like infrastructure), but will have little effect if there are few
+possibilities or the traffic load is too high to distribute much.<br>
+When traffic is unpredictable though, co-learning is less usefull.</P>
+
+<br><br><br><p>
+
+	<table WIDTH="600" BORDER="0" CELLSPACING="10" CELLPADDING="10">
+	<caption><h2>Example Performance Statistics with TC-1++<h2></caption>
+	<tr><td><b>(Map: Simple) Average Junction Waiting Time	</b><br><br>
+		</td><td><IMG src="screens/simple_cl_tc-1++_ajwt.gif"></td></tr>
+	<tr><td><b>(Map: Simple) Total Road Users Arrived			</b><br><br>
+		</td><td><IMG src="screens/simple_cl_tc-1++_att.gif"></td></tr>
+	<tr><td><b>(Map: Simple) Average Trip Waiting Time		</b><br><br>
+		</td><td><IMG src="screens/simple_cl_tc-1++_atwt.gif"></td></tr>
+	<tr><td><b>(Map: Simple) Total Waiting Queue Length		</b><br><br>
+		</td><td><IMG src="screens/simple_cl_tc-1++_twql.gif"></td></tr>
+	</table><HR WIDTH="90%" ALIGN="LEFT">
+	<table WIDTH="600" BORDER="0" CELLSPACING="10" CELLPADDING="10">
+	<tr><td><b>(Map: Complex) Average Junction Waiting Time	</b><br><br>
+		</td><td><IMG src="screens/complex_cl_tc-1++_ajwt.gif"></td></tr>
+	<tr><td><b>(Map: Complex) Total Road Users Arrived			</b><br><br>
+		</td><td><IMG src="screens/complex_cl_tc-1++_att.gif"></td></tr>
+	<tr><td><b>(Map: Complex) Average Trip Waiting Time		</b><br><br>
+		</td><td><IMG src="screens/complex_cl_tc-1++_atwt.gif"></td></tr>
+	<tr><td><b>(Map: Complex) Total Waiting Queue Length		</b><br><br>
+		</td><td><IMG src="screens/complex_cl_tc-1++_twql.gif"></td></tr>
+	</table>
+	  
+</TD>
+</TR>
+
+<TR>
+<TD COLSPAN="2">&nbsp;</TD>
+</TR>
+
+<TR>
+<TD>&nbsp;</TD>
+<TD VALIGN="top" ALIGN="right">&copy; 2001 SP2001-ISG</TD>
+</TR>
+</TABLE>
+
+<P>&nbsp;</P>
+</BODY>
+</HTML>
+

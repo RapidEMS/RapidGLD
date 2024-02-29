@@ -1,0 +1,114 @@
+<HTML>
+<HEAD>
+<TITLE>Green Light District :: Documentation :: Editor :: Usage</TITLE>
+<LINK REL=stylesheet TYPE="text/css" HREF="sp2001isg.css">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#33FF33" VLINK="#FF6600" ALINK="#FF0000">
+<H4>Green Light District :: Documentation :: Editor :: Usage</H4>
+<TABLE WIDTH="760" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+  <TR> 
+    <TD><IMG src="screens/blank.gif" WIDTH="140" HEIGHT="10"></TD>
+    <TD><IMG src="screens/blank.gif" WIDTH="660" HEIGHT="10"></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"> 
+      <P><A HREF="index.html">Welcome</A></P>
+      <P>
+			<A HREF="editor.html">1. Editor</A><BR>
+   	     <IMG src="screens/blank.gif" WIDTH="10" HEIGHT="10"><A HREF="edit_interface.html">a.  Interface</A><BR>
+   	     <IMG src="screens/blank.gif" WIDTH="10" HEIGHT="10"><A HREF="edit_use.html">b. Usage</A><BR>
+   	     <IMG src="screens/blank.gif" WIDTH="10" HEIGHT="10"><A HREF="edit_mapstosims.html">c. From maps to sims</A><BR>
+   	   <A HREF="simulator.html">2. Simulator</A><BR>
+   	   <A HREF="evaluation.html">3. Evaluation Tools</A><BR>
+   	   <A HREF="example.html">4. An Example Session</A><BR>
+   	   <A HREF="algorithms.html">5. Algorithms</A><BR>
+		</P>
+      <P>
+		<A HREF="specs/index.html" TARGET="_blank">Specifications</A><BR>
+        <BR></P>
+      <P><A HREF="definitions.html">Definitions</A><BR>
+        <BR></P>
+      <P><A HREF="beyond.html">Beyond GLD</A><BR>
+        <BR>
+      </P>
+      <P><A HREF="about.html">About</A><BR>
+      </P>
+    </TD>
+
+    <TD VALIGN="top"> 
+
+      <h2>Editor Usage</h2>
+
+
+	<P><I> The Tools and their use: </I></P>
+
+	<P>
+	<ul>
+	<li> Center: click the center button to center the map on the point where editing began
+	<li> Scroll: click and drag over the map to scroll
+	<li> Zoom: left click with the mouse to zoom in and right click to zoom out within the margins of 25% and 250%
+	- the Zoom Box will show the current zoom factor. <br>
+	The Zoom Tool is the standard selected tool.
+	<p>
+	Maximum zoom out: <br>
+	<img src="screens/zoommaxout.gif" alt="Maximum Zoom Out in Simulator">
+	<p>
+	Maximum zoom in: <br><br>
+	<img src="screens/zoommaxin.gif" alt="Maximum Zoom In in Simulator">
+	<p>
+	<li>Select: click on any node or road to select it, or, alternatively,
+	click-and-drag to select elements in a section of the map. <br>
+	A selected node: <br>
+	<img src="screens/select_node.gif" alt="A selected node"><br>
+	A selected road: <br>
+	<img src="screens/select_road.gif" alt="A selected road"><br>
+	A part of an infrastructure selected: <br>
+	<img src="screens/select_infra.gif" alt="A part of an infrastructure selected"><br>
+
+	If you then right click on the selected objects a menu will apear
+	giving you the option to Delete or change the Properties of the selected.<br>
+	Properties will show the Configuration Dialog, in which the following can be changed depending on what was selected:
+		<ul>
+		<li> Road:
+			<ul>
+			<li> number of lanes
+			<li> rules for each lane
+			<li> type of road users
+			</ul>
+		<li> Node: simply shows number of connected roads and ID (-1 if map has not been <A HREF="edit_mapstosims.html">validated</A> yet).
+		</ul><br>
+
+	<!-- <li>* Erase: similar to the Select Tool, but each object is immedeately removed. -->
+	<li>Node: select the type of node you wish to create from the Tool Specific Box and click to create create one. Nodes must stand a minimum distance apart.
+
+	<li>Road: click and drag to place a road between nodes. If you release before reaching another node,
+	you will be creating a turn; move and click the mouse a couple of times more to make fluent turns.<br>
+	Turn creation in progress: <br>
+	<IMG src="screens/x_turn_0.gif"><br>
+	Turn finished: (the only way to change it now is to delete this one and make a new one) <br>
+	<IMG src="screens/x_turn_1.gif"><br>
+	Note: turns look best ik you keep the distance between the nodes greater than 10.
+	<li>Configure: click to display Configure Dialog, then click with the select tool infrastructure components to display their information and settings.
+	</ul>
+	</P>
+	
+	<IMG src="screens/edit_config.gif">
+	<!--<IMG src="screens/edit_config_jnc.gif">
+	<IMG src="screens/edit_config_lane.gif">
+	<IMG src="screens/edit_config_road.gif">-->
+
+	<P>
+	When you start the Editor you get a blank map and the Zoom Tool selected.
+	From here you can either load a map or start one from scratch.<br>
+	An <A HREF="example_map.html">Example Session</A> explains step-by-step map creation.
+	</P>
+     </TD>
+  </TR> 
+<TR><TD COLSPAN="2">&nbsp;</TD></TR><TR>
+    <TD>&nbsp;</TD>
+    <TD VALIGN="top" ALIGN="right">&copy; 2001 SP2001-ISG</TD>
+  </TR>
+</TABLE>
+<P>&nbsp;</P>
+</BODY>
+</HTML>

@@ -1,0 +1,290 @@
+<HTML>
+<HEAD>
+<TITLE>Green Light District :: Documentation :: Simulator :: Interface</TITLE>
+<LINK REL=stylesheet TYPE="text/css" HREF="sp2001isg.css">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#33FF33" VLINK="#FF6600" ALINK="#FF0000">
+<H4>Green Light District :: Documentation :: Simulator :: Interface</H4>
+<TABLE WIDTH="760" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+  <TR> 
+    <TD><IMG src="screens/blank.gif" WIDTH="140" HEIGHT="10"></TD>
+    <TD><IMG src="screens/blank.gif" WIDTH="660" HEIGHT="10"></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"> 
+      <P><A HREF="index.html">Welcome</A></P>
+      <P>
+			<A HREF="editor.html">1. Editor</A><BR>
+   	   <A HREF="simulator.html">2. Simulator</A><BR>
+   	     <IMG src="screens/blank.gif" WIDTH="10" HEIGHT="10"><A HREF="sim_interface.html">a. Interface</A><BR>
+   	     <IMG src="screens/blank.gif" WIDTH="10" HEIGHT="10"><A HREF="sim_use.html">b. Usage</A><BR>
+   	     <IMG src="screens/blank.gif" WIDTH="10" HEIGHT="10"><A HREF="sim_simstoeval.html">c. From sims to evals</A><BR>
+   	   <A HREF="evaluation.html">3. Evaluation Tools</A><BR>
+   	   <A HREF="example.html">4. An Example Session</A><BR>
+   	   <A HREF="algorithms.html">5. Algorithms</A><BR>
+		</P>
+      <P>
+		<A HREF="specs/index.html" TARGET="_blank">Specifications</A><BR>
+        <BR></P>
+      <P><A HREF="definitions.html">Definitions</A><BR>
+        <BR></P>
+      <P><A HREF="beyond.html">Beyond GLD</A><BR>
+        <BR>
+      </P>
+      <P><A HREF="about.html">About</A><BR>
+      </P>
+    </TD>
+
+    <TD VALIGN="top"> 
+
+      <H2>Simulator Interface</H2>
+
+	<img src="screens/sim_toolbar.gif" width="563" height="175" alt="The Toolbar in the Simulator">
+
+     <P>The Menus in the Simulator are as follows:</P>
+
+	<table border=0 cols=3 width="100%">
+            <TR>
+              <TD><IMG src="screens/blank.gif" width="285" height="10"></TD>
+              <TD><IMG src="screens/blank.gif" width="285" height="10"></TD>
+              <TD><IMG src="screens/blank.gif" width="70" height="10"></TD>
+            </TR>
+		<tr><td><br><b>FILE</b></td></tr>
+
+	<tr>
+		<td><li>Open... </td>
+		<td>for opening a map file (*.infra) or<br>
+		a simulation file (*.sim)</td>
+		<td><b><tt>[Ctrl + O]</tt></b></td>
+	</tr>
+	<tr>
+		<td><li> Save </td>
+		<td>for saving a map or simulation</td>
+		<td><b><tt>[Ctrl + S]</tt></b></</td>
+	</tr>
+	<tr>
+		<td><li> Save as... </td>
+		<td>for saving a map under a different name than its last save</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td><li> Properties<br>
+			<IMG src="screens/blank.gif" WIDTH="30" HEIGHT="10">Title<br>
+			<!--<IMG src="screens/blank.gif" WIDTH="30" HEIGHT="10">Author<br>-->
+			<IMG src="screens/blank.gif" WIDTH="30" HEIGHT="10">Comments<br></td>
+		<td>for editing additional info on a map</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td><li> Close </td>
+		<td>for closing the Simulator window</td>
+		<td><b><tt>[Ctrl + W]</tt></b></</td>
+	</tr>
+	<tr>
+		<td><li> Quit </td>
+		<td>for quitting GLD</td>
+		<td><b><tt>[Ctrl + Q]</tt></b></</td>
+	</tr>
+	
+	
+	<tr><td><br><b>SIMULATION</b></td></tr>
+
+	<tr>
+		<td><li> Do one Step </td>
+		<td> minimal advance of the simulation </td>
+		<td><b><tt>[Ctrl + D]</tt></b></</td>
+	</tr>
+	<tr>
+		<td><li> Run </td>
+		<td> continuously advance the simulation </td>
+		<td><b><tt>[Ctrl + R]</tt></b></</td>
+	</tr>
+	<tr>
+		<td><li>Pause </td>
+		<td> stop, but not reset the simulation </td>
+		<td><b><tt>[Ctrl + U]</tt></b></</td>
+	</tr>
+	<tr>
+		<td><li> Stop </td>
+		<td> halt and reset the simulation</td>
+		<td><b><tt>[Ctrl + P]</tt></b></</td>
+	</tr>
+	<tr>
+		<td><li> <a href="definitions.html">Speed</a> <br>
+			<IMG src="screens/blank.gif" WIDTH="30" HEIGHT="10"> Low <br>
+			<IMG src="screens/blank.gif" WIDTH="30" HEIGHT="10"> Medium <br>
+			<IMG src="screens/blank.gif" WIDTH="30" HEIGHT="10"> High <br>
+			<IMG src="screens/blank.gif" WIDTH="30" HEIGHT="10"> Maximum <br>
+			
+		</td>
+		<td>Default setting: Medium</td>
+		<td></td>
+	</tr>
+
+	<tr><td><br><b>STATISTICS</b></td></tr>
+
+	<tr>
+		<td><li> Show <A HREF="eval_stats.html"> Statistics </A> </td>
+		<td> open Statistics window with info on this map </td>
+		<td><b><tt>[Ctrl + T]</tt></b></td>
+	</tr>
+	<tr>
+		<td><li> Track <br>
+			<IMG src="screens/blank.gif" WIDTH="30" HEIGHT="10"> Total waiting queue length <br>
+			<IMG src="screens/blank.gif" WIDTH="30" HEIGHT="10"> Total Road Users Arrived <br>
+			<IMG src="screens/blank.gif" WIDTH="30" HEIGHT="10"> Average trip waiting time <br>
+			<IMG src="screens/blank.gif" WIDTH="30" HEIGHT="10"> Average junction waiting time <br>
+
+		</td>
+		<td>Display graphic on the selected statistics for whole map<br>
+		or selected nodes (select nodes with config panel)</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td><li> Toggle in-view statistics </td>
+		<td>To overlay junctions with color indicating the traffic density,<br>
+		darker signifying denser</td>
+		<td></td>
+	</tr>
+
+	<tr><td><br><b>OPTIONS</b></td></tr>
+	<tr>
+		<td><li> Toggle View  </td>
+		<td> switch animation on/off (significantly increases speed)</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td><li> Toggle Cycle Counter  </td>
+		<td> switch counter on status bar on/off</td>
+		<td></td>
+	</tr>
+
+	<tr>
+		<td><li> Traffic light controller <br>
+		
+			<IMG src="screens/blank.gif" WIDTH="30" HEIGHT="10"> Simple Maths <br>
+				<IMG src="screens/blank.gif" WIDTH="60" HEIGHT="10"> <A HREF="algo_tlc_rnd.html"> Random </A> <br>
+				<IMG src="screens/blank.gif" WIDTH="60" HEIGHT="10"> <A HREF="algo_tlc_mc.html"> Most Cars </A> <br>
+				<IMG src="screens/blank.gif" WIDTH="60" HEIGHT="10"> <A HREF="algo_tlc_rld.html"> Red Light District </A> <br><br>
+
+			<IMG src="screens/blank.gif" WIDTH="30" HEIGHT="10"> Complex Maths <br>
+				<IMG src="screens/blank.gif" WIDTH="60" HEIGHT="10"> <A HREF="algo_tlc_hill.html"> Local Hillclimbing </A> <br><br>
+
+			<IMG src="screens/blank.gif" WIDTH="30" HEIGHT="10"> Longest Q-variants <br>
+				<IMG src="screens/blank.gif" WIDTH="60" HEIGHT="10"> <A HREF="algo_tlc_lq.html"> Longest queue </A> <br>
+				<IMG src="screens/blank.gif" WIDTH="60" HEIGHT="10"> <A HREF="algo_tlc_rlq.html"> Relative longest queue </A> <br>
+				<IMG src="screens/blank.gif" WIDTH="60" HEIGHT="10"> <A HREF="algo_tlc_bf.html"> Best first </A> <br><br>
+
+			<IMG src="screens/blank.gif" WIDTH="30" HEIGHT="10"> Reinforcement Learning <br>
+				<IMG src="screens/blank.gif" WIDTH="60" HEIGHT="10"> <A HREF="algo_tlc_tc-1.html"> TC-1 </A> <br>
+				<IMG src="screens/blank.gif" WIDTH="60" HEIGHT="10"> <A HREF="algo_tlc_tc-2.html"> TC-2 </A> <br>
+				<IMG src="screens/blank.gif" WIDTH="60" HEIGHT="10"> <A HREF="algo_tlc_tc-3.html"> TC-3 </A> <br>
+				<IMG src="screens/blank.gif" WIDTH="60" HEIGHT="10"> <A HREF="algo_tlc_tc-1++.html"> TC-1 Speed Optimized </A> <br>
+				<IMG src="screens/blank.gif" WIDTH="60" HEIGHT="10"> <A HREF="algo_tlc_tc-2++.html"> TC-2 Speed Optimized </A> <br>
+				<IMG src="screens/blank.gif" WIDTH="60" HEIGHT="10"> <A HREF="algo_tlc_tc-3++.html"> TC-3 Speed Optimized </A> <br> <br>
+				
+			<IMG src="screens/blank.gif" WIDTH="30" HEIGHT="10"> Genetic <br>
+				<IMG src="screens/blank.gif" WIDTH="60" HEIGHT="10"> <A HREF="algo_tlc_acgj-1.html"> ACGJ-1 </A> <br>
+				<IMG src="screens/blank.gif" WIDTH="60" HEIGHT="10"> <A HREF="algo_tlc_acgj-2.html"> ACGJ-2 </A> <br>
+				<IMG src="screens/blank.gif" WIDTH="60" HEIGHT="10"> <A HREF="algo_tlc_acgj-3.html"> ACGJ-3 </A> <br> <br>
+
+			<IMG src="screens/blank.gif" WIDTH="30" HEIGHT="10"> Neural Network <br>
+				<IMG src="screens/blank.gif" WIDTH="60" HEIGHT="10"> <A HREF="algo_tlc_neural.html"> GenNeural</A> <br>
+
+		</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td><li> Driving Policy <br> 
+			<IMG src="screens/blank.gif" WIDTH="30" HEIGHT="10"> <A HREF="algo_dp_sp1.html"> Normal Shortest Path </A><br>
+			<IMG src="screens/blank.gif" WIDTH="30" HEIGHT="10"> <A HREF="algo_dp_sp2.html"> Least Busy Shortest Path </A><br>
+			<IMG src="screens/blank.gif" WIDTH="30" HEIGHT="10"> <A HREF="algo_dp_agr.html"> Aggressive </A><br>
+			<IMG src="screens/blank.gif" WIDTH="30" HEIGHT="10"> <A HREF="algo_dp_cl.html"> Co-learning </A><br>
+		</td>
+		<td> Co-learning can only be chosen in conjunction with<br>
+		some traffic light control algorithms</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td><li> Open Editor </td>
+		<td> open the editor window </td>
+		<td><b><tt>[Ctrl + E]</tt></b></td>
+	</tr>
+	<tr>
+		<td><li> Settings <br>
+			<IMG src="screens/blank.gif" WIDTH="30" HEIGHT="10"> Config dialog always on top <br>
+			<IMG src="screens/blank.gif" WIDTH="30" HEIGHT="10"> Road users cross nodes <br>
+			<IMG src="screens/blank.gif" WIDTH="30" HEIGHT="10"> Sign controller switches <br>
+			<IMG src="screens/blank.gif" WIDTH="30" HEIGHT="10"> traffic lights safely <br>
+			<IMG src="screens/blank.gif" WIDTH="30" HEIGHT="10"> Statistics export separator character <br>
+		</td>
+		<td> general configuration </td>
+		<td><b><tt></tt></b></td>
+	</tr>
+
+	<tr><td><br><b>HELP</b></td></tr>
+	<tr>
+		<td><li> Help </td>
+		<td> aid for the common user </td>
+		<td></td>
+	</tr>
+	<tr>
+		<td><li> Specifications </td>
+		<td> precise guide to the GLD code </td>
+		<td></td>
+	</tr>
+	<tr>
+		<td><li> License </td>
+		<td> <A HREF="license.html"> the GNU Public License </A></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td><li> Website </td>
+		<td> opens <A HREF="http://www.students.cs.uu.nl/swp/2001/isg/">
+GLD Project Website </A> in your favorite browser </td>
+		<td></td>
+	</tr>
+	<tr>
+		<td><li> About </td>
+		<td> <A HREF="about.html"> a little note about GLD </A>
+</td>
+		<td></td>
+	</tr>
+	</table>
+
+	<P>The Simulator's Toolbar contains the following:</P>
+
+	<P><ul><li>The Zoom Box - displays current zoom factor (initialized at 100%) and allows adjustment between values of:
+	<ul><li>25%
+	<li>50%
+	<li>75%
+	<li>100%
+	<li>150%
+	<li>200%
+	<li>250%
+	</ul><BR>
+	<li>The Tool Box - the tools available in the Simulator (initial tool: Zoom Tool) are selectable here:
+	<ul><li>Zoom - the Tool for manually zooming to the above mentioned zoom factors
+	<li>Select - the Tool for selecting nodes or roads</UL><BR>
+	<li>The Do One Step Button: minimal advance of the simulation
+	<li>The Run Button: continuously advance the simulation
+	<li>The Pause Button: stop, but not reset the simulation
+	<li>The Stop Button: halt and reset the simulation
+	<li>The Speed Box: shows current speed setting and lets user choose one of:
+		<ul><li>Low <li>Medium <li>High </ul><br>
+		<li>The Statistics Button: evaluate the data obtained from running the simulation on this map up to now
+		<li>The Toggle View Button: switch animation on/off
+		<li>Help button: quick access to the documentation
+	</ul></P>
+	
+     </TD>
+  </TR> 
+<TR><TD COLSPAN="2">&nbsp;</TD></TR><TR>
+    <TD>&nbsp;</TD>
+    <TD VALIGN="top" ALIGN="right">&copy; 2001 SP2001-ISG</TD>
+  </TR>
+</TABLE>
+<P>&nbsp;</P>
+</BODY>
+</HTML>

@@ -1,0 +1,516 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+  <HEAD>
+    <TITLE>
+      Green Light District :: Documentation :: Editor :: Interface
+    </TITLE>
+    <LINK rel="stylesheet" type="text/css" href="sp2001isg.css">
+  </HEAD>
+  <BODY bgcolor="#FFFFFF" text="#000000" link="#33FF33" vlink="#FF6600" alink="#FF0000">
+    <H4>
+      Green Light District :: Documentation :: Editor :: Interface
+    </H4>
+    <TABLE width="760" border="0" cellspacing="0" cellpadding="0">
+      <TR>
+        <TD>
+          <IMG src="screens/blank.gif" width="140" height="10">
+        </TD>
+        <TD>
+          <IMG src="screens/blank.gif" width="660" height="10">
+        </TD>
+      </TR>
+      <TR>
+        <TD valign="top">
+          <P>
+            <A href="index.html">Welcome</A>
+          </P>
+          <P>
+            <A href="editor.html">1. Editor</A><BR>
+             <IMG src="screens/blank.gif" width="10" height="10"><A href="edit_interface.html">a. Interface</A><BR>
+             <IMG src="screens/blank.gif" width="10" height="10"><A href="edit_use.html">b. Usage</A><BR>
+             <IMG src="screens/blank.gif" width="10" height="10"><A href="edit_mapstosims.html">c. From maps to sims</A><BR>
+             <A href="simulator.html">2. Simulator</A><BR>
+             <A href="evaluation.html">3. Evaluation Tools</A><BR>
+             <A href="example.html">4. An Example Session</A><BR>
+             <A href="algorithms.html">5. Algorithms</A><BR>
+          </P>
+          <P>
+            <A href="specs/index.html" target="_blank">Specifications</A><BR>
+            <BR>
+          </P>
+          <P>
+            <A href="definitions.html">Definitions</A><BR>
+            <BR>
+          </P>
+          <P>
+            <A href="beyond.html">Beyond GLD</A><BR>
+            <BR>
+          </P>
+          <P>
+            <A href="about.html">About</A>
+          </P>
+        </TD>
+        <TD valign="top">
+          <H2>
+            Editor Interface
+          </H2>
+          <IMG src="screens/edit_toolbar.gif" width="535" height="140" alt="The GLD editor window"> 
+          <P>
+            The Menus in the Editor give the following options, with their corresponding shortcut keys:
+          </P>
+          <TABLE border="0" cols="3" width="100%">
+            <TR>
+              <TD><IMG src="screens/blank.gif" width="285" height="10"></TD>
+              <TD><IMG src="screens/blank.gif" width="285" height="10"></TD>
+              <TD><IMG src="screens/blank.gif" width="70" height="10"></TD>
+            </TR>
+            <TR>
+              <TD>
+                <BR>
+                <BR>
+                <B>FILE</B><BR>
+              </TD>
+            </TR>
+            <TR>
+              <TD>
+                <li>New
+              </TD>
+              <TD>
+                for creating a map file from scratch
+              </TD>
+              <TD>
+                <B><TT>[Ctrl + N]</TT></B>
+              </TD>
+              <TD>
+                <BR>
+              </TD>
+            </TR>
+            <TR>
+              <TD>
+                <li>Open...
+              </TD>
+              <TD>
+                for opening a map file
+              </TD>
+              <TD>
+                <B><TT>[Ctrl + O]</TT></B>
+              </TD>
+              <TD>
+                <BR>
+              </TD>
+            </TR>
+            <TR>
+              <TD>
+                <li>Save
+              </TD>
+              <TD>
+                for saving a map file
+              </TD>
+              <TD>
+                <B><TT>[Ctrl + S]</TT></B>
+              </TD>
+              <TD>
+                <BR>
+              </TD>
+            </TR>
+            <TR>
+              <TD>
+                <li>Save as...
+              </TD>
+              <TD>
+                for saving a map under a different name than its last save
+              </TD>
+              <TD>
+                <BR>
+              </TD>
+            </TR>
+            <TR>
+              <TD>
+                <li>Properties<BR>
+                 <IMG src="screens/blank.gif" width="30" height="10">Title<BR>
+                 <IMG src="screens/blank.gif" width="30" height="10">Author<BR>
+                 <IMG src="screens/blank.gif" width="30" height="10">Comments<BR>
+              </TD>
+              <TD>
+                for editing additional info on a map
+              </TD>
+              <TD>
+                <BR>
+              </TD>
+            </TR>
+            <TR>
+              <TD>
+                <li>Close
+              </TD>
+              <TD>
+                for closing the Editor window
+              </TD>
+              <TD>
+                <B><TT>[Ctrl + W]</TT></B>
+              </TD>
+              <TD>
+                <BR>
+              </TD>
+            </TR>
+            <TR>
+              <TD>
+                <li>Quit
+              </TD>
+              <TD>
+                for quitting GLD
+              </TD>
+              <TD>
+                <B><TT>[Ctrl + Q]</TT></B>
+              </TD>
+              <TD>
+                <BR>
+              </TD>
+            </TR>
+            <TR>
+              <TD>
+                <BR>
+                <BR>
+                <B>EDIT</B><BR>
+              </TD>
+            </TR>
+          <!--  <TR>
+              <TD>
+                <li>* Cut
+              </TD>
+              <TD>
+                cut selected portion of infrastructure
+              </TD>
+              <TD>
+                <B><TT>[Ctrl + X]</TT></B>
+              </TD>
+              <TD>
+                <BR>
+              </TD>
+            </TR>
+            <TR>
+              <TD>
+                <li>* Copy
+              </TD>
+              <TD>
+                copy selected portion of infrastructure to mouse
+              </TD>
+              <TD>
+                <B><TT>[Ctrl + C]</TT></B>
+              </TD>
+              <TD>
+                <BR>
+              </TD>
+            </TR>
+            <TR>
+              <TD>
+                <li>* Paste
+              </TD>
+              <TD>
+                paste selected portion of infrastructure to mouse
+              </TD>
+              <TD>
+                <B><TT>[Ctrl + V]</TT></B>
+              </TD>
+              <TD>
+                <BR>
+              </TD>
+            </TR>-->
+            <TR>
+              <TD>
+                <li>Delete
+              </TD>
+              <TD>
+                remove selected portion of infrastructure
+              </TD>
+              <TD>
+                <B><TT>[Ctrl + Delete]</TT></B>
+              </TD>
+              <TD>
+                <BR>
+              </TD>
+            </TR>
+            <TR>
+              <TD>
+                <li>Select All
+              </TD>
+              <TD>
+                select all Roads and Nodes
+              </TD>
+              <TD>
+                <B><TT>[Ctrl + A]</TT></B>
+              </TD>
+              <TD>
+                <BR>
+              </TD>
+            </TR>
+            <TR>
+              <TD>
+                <li>Deselect
+              </TD>
+              <TD>
+                reset any selection
+              </TD>
+              <TD>
+                <B><TT>[Ctrl + D]</TT></B>
+              </TD>
+              <TD>
+                <BR>
+              </TD>
+            </TR>
+            <TR>
+              <TD>
+                <BR>
+                <BR>
+                <B>OPTIONS</B><BR>
+              </TD>
+            </TR>
+            <TR>
+              <TD>
+                <li><A HREF="edit_use.html">Toggle Grid</A>
+              </TD>
+              <TD>
+                switch grid overlay for reference on
+              </TD>
+              <TD>
+              </TD>
+              <TD>
+                <BR>
+              </TD>
+            </TR>
+            <TR>
+              <TD>
+                <li>Change Size
+              </TD>
+              <TD>
+                change the size of the map
+              </TD>
+              <TD>
+              </TD>
+              <TD>
+                <BR>
+              </TD>
+            </TR>
+            <TR>
+              <TD>
+                <li><A HREF="edit_mapstosims.html">Validate</A>
+              </TD>
+              <TD>
+                check all couplings between Roads and Nodes
+              </TD>
+              <TD>
+              </TD>
+              <TD>
+                <BR>
+              </TD>
+            </TR>
+	<tr>
+		<td><li> Settings <br>
+			<IMG src="screens/blank.gif" WIDTH="30" HEIGHT="10"> Config dialog always on top <br>
+			<IMG src="screens/blank.gif" WIDTH="30" HEIGHT="10"> Road users cross nodes <br>
+			<IMG src="screens/blank.gif" WIDTH="30" HEIGHT="10"> Sign controller switches <br>
+			<IMG src="screens/blank.gif" WIDTH="30" HEIGHT="10"> traffic lights safely <br>
+			<IMG src="screens/blank.gif" WIDTH="30" HEIGHT="10"> Statistics export separator character <br>
+		</td>
+		<td> general configuration </td>
+		<td><b><tt></tt></b></td>
+	</tr>
+
+            <TR>
+              <TD>
+                <BR>
+                <BR>
+                <B>HELP</B><BR>
+              </TD>
+            </TR>
+            <TR>
+              <TD>
+                <li>Help
+              </TD>
+              <TD>
+                aid for the common user
+              </TD>
+              <TD>
+                <B><TT>[Ctrl + H]</TT></B>
+              </TD>
+              <TD>
+                <BR>
+              </TD>
+            </TR>
+            <TR>
+              <TD>
+                <li><A HREF="specs/index.html">Specifications</A>
+              </TD>
+              <TD>
+                precise guide to the GLD code
+              </TD>
+              <TD>
+              </TD>
+              <TD>
+                <BR>
+              </TD>
+            </TR>
+            <TR>
+              <TD>
+                <li><A HREF="license.html">License</A>
+              </TD>
+              <TD>
+                the open-source limitations for GLD
+              </TD>
+              <TD>
+              </TD>
+              <TD>
+                <BR>
+              </TD>
+            </TR>
+            <TR>
+              <TD>
+                <li><A HREF="http://www.students.cs.uu.nl/swp/2001/isg/">Website</A>
+              </TD>
+              <TD>
+                opens the GLD www adress in a web browser
+              </TD>
+              <TD>
+              </TD>
+              <TD>
+                <BR>
+              </TD>
+            </TR>
+            <TR>
+              <TD>
+                <li><A HREF="about.html">About</A>
+              </TD>
+              <TD>
+                a little note about GLD
+              </TD>
+              <TD>
+              </TD>
+              <TD>
+                <BR>
+              </TD>
+            </TR>
+          </TABLE>
+          <BR></p>
+           
+          <P>
+            The Editor's Toolbar contains the following: 
+            <!--<tr><td></td><TD VALIGN="top" ALIGN="right"><img src="screens/zoombox.gif" align="right" width="68" height="135" alt="The Zoom Box"></td></tr>
+                <tr><td></td>
+                <td>-->
+          </P>
+          <P><UL>
+            <LI>
+              The New button
+            </LI>
+            <LI>
+              The Load button
+            </LI>
+            <LI>
+              The Save button
+            </LI>
+            <LI>
+              The Zoom Box - displays current zoom factor (initialised at 100%) and allows adjustment to values: 
+              <UL>
+                <LI>
+                  25%
+                </LI>
+                <LI>
+                  50%
+                </LI>
+                <LI>
+                  75%
+                </LI>
+                <LI>
+                  100%
+                </LI>
+                <LI>
+                  150%
+                </LI>
+                <LI>
+                  200%
+                </LI>
+                <LI>
+                  250%
+                </LI>
+              </UL>
+            </LI>
+            <LI>
+              The Center button: click to center the map
+            </LI>
+            <!--LI>
+              The Tool Box - redefine the use of selected tool
+            </LI-->
+            <LI>
+              Zoom - the Tool for manually zooming to the above mentioned zoom factors
+            </LI>
+            <LI>
+              Select - the Tool for selecting nodes or roads
+            </LI>
+            <!--<LI>
+              * Erase - the Tool for erasing nodes or roads
+            </LI>-->
+            <LI>
+              Node - the Tool for creating nodes
+            </LI>
+            <LI>
+              Road - the Tool for creating roads
+            </LI>
+            <LI>
+		Drive lanes tool - for adjusting the number of drive lanes of an existing road
+            </LI>
+            <LI>
+              The Help button: quick access to the documentation <BR> <BR>
+            </LI>
+            <LI>
+              The Tool Specific Box appears when the node tool is selected with - 
+              <UL>
+                <LI>
+                  Edge node - make next/selected node an edge node
+                </LI>
+                <LI>
+                  Traffic Lights - give next/selected node traffic lights
+                </LI>
+                <LI>
+                  No Signs - remove from next/selected node traffic lights
+                </LI>
+                <LI>
+                  Net-Tunnel - for "transferring road user agents to a GLD simulation on another machine<!--* Roundabout - make next/selected node a circular junction-->
+                </LI>
+              </UL>
+              <!--<li>The Tool Configuration Button appears when the Road Tool is selected and displays when clicked:
+                      <ul>
+                      <li>Alpha direction - the number of Lanes for the Alpha directions (0-4)
+                      <li>Beta direction - idem for Beta
+                      <li>per Lane of Alpha and Beta:
+                          <ul>
+                          <li>Road users - cars or other
+                          <li>Left - whether turning left at the destination node is allowed.
+                          <li>Straight ahead - same for ahead.
+                          <li>Right - same for right.
+                          </ul>
+                      </ul>-->
+
+          </UL></P>
+		  
+        </TD>
+        
+      </TR>
+      <TR>
+        <TD colspan="2">
+          &nbsp;
+        </TD>
+      </TR>
+      <TR>
+        <TD>
+          &nbsp;
+        </TD>
+        <TD valign="top" align="right">
+          &copy; 2001 SP2001-ISG
+        </TD>
+      </TR>
+    </TABLE>
+    <P>
+      &nbsp;
+    </P>
+  </BODY>
+</HTML>
+

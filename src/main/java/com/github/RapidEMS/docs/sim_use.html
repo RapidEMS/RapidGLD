@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>Green Light District :: Documentation :: Simulator :: Usage</TITLE>
+<LINK REL="stylesheet" TYPE="text/css" HREF="sp2001isg.css">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#33FF33" VLINK="#FF6600" ALINK="#FF0000">
+<H4>Green Light District :: Documentation :: Simulator :: Usage</H4>
+
+<TABLE WIDTH="760" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+<TR>
+<TD><IMG SRC="screens/blank.gif" WIDTH="140" HEIGHT="10"></TD>
+<TD><IMG SRC="screens/blank.gif" WIDTH="660" HEIGHT="10"></TD>
+</TR>
+
+<TR>
+<TD VALIGN="top">
+<P><A HREF="index.html">Welcome</A></P>
+
+<P><A HREF="editor.html">1. Editor</A><BR>
+ <A HREF="simulator.html">2. Simulator</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="10" HEIGHT="10"><A HREF="sim_interface.html">a. Interface</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="10" HEIGHT="10"><A HREF="sim_use.html">b. Usage</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="10" HEIGHT="10"><A HREF="sim_simstoeval.html">c. From sims to evals</A><BR>
+ <A HREF="evaluation.html">3. Evaluation Tools</A><BR>
+ <A HREF="example.html">4. An Example Session</A><BR>
+ <A HREF="algorithms.html">5. Algorithms</A><BR>
+</P>
+
+<P><A HREF="specs/index.html" TARGET="_blank">Specifications</A><BR>
+<BR>
+</P>
+
+<P><A HREF="definitions.html">Definitions</A><BR>
+<BR>
+</P>
+
+<P><A HREF="beyond.html">Beyond GLD</A><BR>
+<BR>
+</P>
+
+<P><A HREF="about.html">About</A><BR>
+</P>
+</TD>
+<TD VALIGN="top">
+<H2>Simulator Usage</H2>
+
+<P>After you've loaded a map, it will be displayed in the view, with completely empty roads and all-red traffic lights. Node ID's will be displayed next to each node. The map will be centered at the
+point where map-making began in the editor.<br>
+Here, the spawning frequency and destination frequencies are displayed for edge node 0 (selected).</P>
+
+<IMG SRC="screens/simple.gif" ALT="Initial load of map Simple in the simulator"> 
+
+<P>You may want to adjust spawn frequencies. Select the Adjust tool and click on an edge node.<BR>
+ Spawning frequencys for this edge node will be displayed in blue next to it, and destination frequencies from this edge node to others next ot the others (edge nodes are also all blue).<BR>
+ Values range between 0.0 and 1.0. Click-and-drag on an edge node to modify (left to decrease, right to increase).<BR>
+Initially, destination frequencies are evenly divided for all edge nodes over all the other. You may have to tweak them to get realistic traffic (low waiting queue lengths).
+<BR>
+ You can only adjust these values for edge nodes.</P>
+
+<P>Now you can make it advance one step at a time with Do One Step, or set it to run continuously with Run. Road users will flow across their lanes, and halt only at red lights or full lanes. During
+simulation, you may temporarily put the simulation on hold with Pause, or reset it with Stop.</P>
+
+<IMG SRC="screens/x_simple_sim_1.gif" ALT="First road users spawned by advancing manualy"> 
+
+<P>The interesting part of running a simulation is changing its parameters:</P>
+
+<UL>
+<LI> Spawning Frequencies: see above </LI>
+
+<LI> Traffic Controllers: Options menu (default: Random) </LI>
+
+<LI> Driving Policies: Options menu (default: Shortest Path, Co-learning only selectable for some traffic controllers) </LI>
+</UL>
+
+<IMG SRC="screens/x_simple_sim_2.gif" ALT="Typical traffic"> <!--<IMG src="screens/sim_config_edg.gif">
+    <IMG src="screens/sim_config_jnc.gif">
+    <IMG src="screens/sim_config_road.gif">--> 
+
+<P> Additionally, one can zoom in or out using the menu option or the Zoom Tool, and scroll the map to select the most interesting section. </P>
+
+<P> Take notice that changing traffic control algorithms or driving policies while in simulation will not reset past results. </P>
+
+<P> More info can be found in the <A HREF="example_sim.html">Traffic Simulation section</A> of the <A HREF="example.html">Example Session </A>.</P>
+</TD>
+</TR>
+
+<TR>
+<TD COLSPAN="2">&nbsp;</TD>
+</TR>
+
+<TR>
+<TD>&nbsp;</TD>
+<TD VALIGN="top" ALIGN="right">&copy; 2001 SP2001-ISG</TD>
+</TR>
+</TABLE>
+
+<P>&nbsp;</P>
+</BODY>
+</HTML>
+

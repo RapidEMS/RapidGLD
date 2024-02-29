@@ -1,0 +1,106 @@
+<HTML>
+<HEAD>
+<TITLE>Green Light District :: Documentation :: An Example Session :: Map creation</TITLE>
+<LINK REL=stylesheet TYPE="text/css" HREF="sp2001isg.css">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#33FF33" VLINK="#FF6600" ALINK="#FF0000">
+<H4>Green Light District :: Documentation :: An Example Session :: Map creation</H4>
+<TABLE WIDTH="760" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+  <TR> 
+    <TD><IMG src="screens/blank.gif" WIDTH="140" HEIGHT="10"></TD>
+    <TD><IMG src="screens/blank.gif" WIDTH="660" HEIGHT="10"></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"> 
+      <P><A HREF="index.html">Welcome</A></P>
+      <P>
+			<A HREF="editor.html">1. Editor</A><BR>
+   	   <A HREF="simulator.html">2. Simulator</A><BR>
+   	   <A HREF="evaluation.html">3. Evaluation Tools</A><BR>
+   	   <A HREF="example.html">4. An Example Session</A><BR>
+				<IMG src="screens/blank.gif" WIDTH="10" HEIGHT="10"><A HREF="example_map.html">a. Map Creation</A><BR>
+   	     <IMG src="screens/blank.gif" WIDTH="10" HEIGHT="10"><A HREF="example_sim.html">b. Traffic Simulation</A><BR>
+   	     <IMG src="screens/blank.gif" WIDTH="10" HEIGHT="10"><A HREF="example_stats.html">c. Statistics Evaluation</A><BR>
+   	   <A HREF="algorithms.html">5. Algorithms</A><BR>
+		</P>
+      <P>
+		<A HREF="specs/index.html" TARGET="_blank">Specifications</A><BR>
+        <BR></P>
+      <P><A HREF="definitions.html">Definitions</A><BR>
+        <BR></P>
+      <P><A HREF="beyond.html">Beyond GLD</A><BR>
+        <BR>
+      </P>
+      <P><A HREF="about.html">About</A><BR>
+      </P>
+    </TD>
+
+    <TD VALIGN="top"> 
+
+      <h2>An example of how to create a GLD Map</h2>
+
+
+      <P>Let's make a map from scratch to get to know GLD's editor.</P>
+
+	<P><ol>
+	<li> First off, start the GLD Editor.
+	<li> Currently, you have the Zoom Tool selected, which has little use, as nothing is shown in the view.<br>
+	Let's start by making a simple map: select the Node Tool from the Toolbar.<br>
+	<li> You will see the Tool Box appear next to the Tool drop-down box. It currently reads "Traffic Lights", meaning the Node you may create next will be a standard junction.<br>
+
+	<li> Click with the left mouse button somewhere in the view to create a Junction Node.
+	Don't worry, it doesn't matter if you click in a corner, maps are practically infinitely scrollable in GLD.<br>
+
+	<li> You will now see a square representing your Junction Node appear.
+	Now, a Node by itself is no use, so we are going to make a few others.
+	Click a few more times to make other Nodes. Now select "Edge Node" from the Tool Specific Box and
+	click a few times to make some Edge Nodes. These will be the only ones that will spawn
+	Road Users in the simulation. It is meaningful to put them on the edges of your map for now.<br>
+	<li> Now, select the Road Tool from the toolbar. Drag from one Node to another: a temporary line will be shown to indicate placement.
+	End drag on a target Node. A standard Road will appear, with 2 lanes per direction.
+	
+	<br><br>
+	<img src="screens/edit2.gif" width="315" height="139" alt="Creating a Road between Nodes">
+	<br><br>
+	Also, Traffic Lights will be visible on their corresponding locations at the end of a lane.
+	experiment with the Tool Configuration 	to make Roads with more or less lanes, and also play with the direction rules.
+	As you add roads between your Nodes some Traffic Lights will change from green to red,
+	indicating the standard relation of control in your current infrastructure.
+	Keep in mind that Edge Nodes can have only one outgoing Road.
+	<br>
+	<br>
+	<img src="screens/edit3.gif" width="348" height="298" alt="A beginning of a map">
+	<br>
+	<br>
+	<li>Now it is time to check you map for inconsistency. This can be left to the <A HREF="edit_mapstosims.html">Validation</A> that, after you have saved a map in the Editor, 
+	signals errors in the connections between Nodes and Roads.
+	</ol></P>
+
+	<P> We can also alter an existing map, which requires less work, but more minute orientation in its infrastructure.
+	</P>
+
+	<P>
+	<ol>
+		<li> Open map called "Complex".
+		<li> Scroll and zoom about a bit to get to know it.
+		<li> Now, go to the center of the map.
+		<li> Delete edge node 0 and replace it with a junction.
+		<li> Extend junctions 8 and 9 with junctions and roads (9 can only be extended westwards and 8 northwards)
+		<li> Link the extended junctions to new edge nodes.
+		<li> You've now extended a previously saved map, on which you could run a simulation and compare statistics.
+	</ol>
+	</P>
+
+	<P> We have a map now, and we can move on to running a simulation on it.
+	</P>
+
+     </TD>
+  </TR> 
+<TR><TD COLSPAN="2">&nbsp;</TD></TR><TR>
+    <TD>&nbsp;</TD>
+    <TD VALIGN="top" ALIGN="right">&copy; 2001 SP2001-ISG</TD>
+  </TR>
+</TABLE>
+<P>&nbsp;</P>
+</BODY>
+</HTML>

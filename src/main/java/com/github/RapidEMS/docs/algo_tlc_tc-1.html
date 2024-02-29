@@ -1,0 +1,143 @@
+<HTML>
+<HEAD>
+<TITLE>Green Light District :: Documentation :: Algorithms :: Traffic Light Controllers :: TC-1</TITLE>
+<LINK REL=stylesheet TYPE="text/css" HREF="sp2001isg.css">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#33FF33" VLINK="#FF6600" ALINK="#FF0000">
+<H4>Green Light District :: Documentation :: Algorithms :: Traffic Light Controllers :: TC-1</H4>
+<TABLE WIDTH="760" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+  <TR> 
+    <TD><IMG src="screens/blank.gif" WIDTH="140" HEIGHT="10"></TD>
+    <TD><IMG src="screens/blank.gif" WIDTH="660" HEIGHT="10"></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"> 
+      <P><A HREF="index.html">Welcome</A></P>
+      <P>
+		<A HREF="editor.html">1. Editor</A><BR>
+		<A HREF="simulator.html">2. Simulator</A><BR>
+		<A HREF="evaluation.html">3. Evaluation Tools</A><BR>
+		<A HREF="example.html">4. An Example Session</A><BR>
+		<A HREF="algorithms.html">5. Algorithms</A><BR>
+		<IMG src="screens/blank.gif" WIDTH="10" HEIGHT="10"><A HREF="algo_dp.html">a. Driving policies</A><BR>
+
+			<IMG src="screens/blank.gif" WIDTH="10" HEIGHT="10"><A HREF="algo_tlc.html">b. Traffic light controllers</A><BR>
+			<IMG src="screens/blank.gif" WIDTH="20" HEIGHT="10"><A HREF="algo_tlc_rnd.html">	1)  Random		</A><BR>
+			<IMG src="screens/blank.gif" WIDTH="20" HEIGHT="10"><A HREF="algo_tlc_mc.html">	2)  Most Cars	</A><BR>
+			<IMG src="screens/blank.gif" WIDTH="20" HEIGHT="10"><A HREF="algo_tlc_rld.html">	3)  RLD		</A><BR><BR>
+
+			<IMG src="screens/blank.gif" WIDTH="20" HEIGHT="10"><A HREF="algo_tlc_hill.html">	4)  Hillclimbing	</A><BR><BR>
+
+			<IMG src="screens/blank.gif" WIDTH="20" HEIGHT="10"><A HREF="algo_tlc_lq.html">	5)  Longest Queue	</A><BR>
+			<IMG src="screens/blank.gif" WIDTH="20" HEIGHT="10"><A HREF="algo_tlc_rlq.html">	6)  Relative LQ	</A><BR>
+			<IMG src="screens/blank.gif" WIDTH="20" HEIGHT="10"><A HREF="algo_tlc_bf.html">	7)  Best first	</A><BR><BR>
+
+
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_tc-1.html">8) TC-1</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_tc-2.html">9) TC-2</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_tc-3.html">10) TC-3</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_tc-1++.html">11) TC-1++</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_tc-2++.html">12) TC-2++</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_tc-3++.html">13) TC-3++</A><BR>
+<BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_acgj-1.html">14) ACGJ-1</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_acgj-2.html">15) ACGJ-2</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_acgj-3.html">16) ACGJ-3</A><BR>
+<BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_neural.html">17) GenNeural</A><BR>		</P>
+      <P>
+		<A HREF="specs/index.html" TARGET="_blank">Specifications</A><BR>
+        <BR></P>
+      <P><A HREF="definitions.html">Definitions</A><BR>
+        <BR></P>
+      <P><A HREF="beyond.html">Beyond GLD</A><BR>
+        <BR>
+      </P>
+      <P><A HREF="about.html">About</A><BR>
+      </P>
+    </TD>
+
+    <TD VALIGN="top"> 
+
+      <h2>TC-1</h2>
+ <p>TC-1 is a reinforcement learning algorithm which will
+        try to find a optimal policy for the traffic lights that
+        will minimize the waiting time of the roadusers. To do so
+        it calculates the gain for each traffic light, then it
+        selects the configuration of trafficlights per
+        roadcrossing which has the highest summed gain value. </p>
+        <p>The gain of each traffic light is determined by the
+        roadusers who are in the waiting queue of this
+        trafficlight. Each one of the roadusers gives a vote for
+        red and green, denoted by Q(green) and Q(red), the
+        difference between them is the benefit for this roaduser
+        to put this trafficlight to green. All benefits are
+        summed and form the gain of this traffic light. </p>
+        <p>Initialy the Q values for red and green are set to
+        zero for all possible situations. When a roaduser moves
+        this will change the Q value of that situation. After a
+        while, when all possible situations have accourd a couple
+        of times, the system will learn a optimal policy which
+        will result in an increase of performance.</p>
+        <p>The Q value for a current situation is calculated by
+        summing over each possible situation (target) which is
+        reachable for this roaduser at this situation. Per target
+        the chance of reaching this target (from this situation)
+        is multiplied by the instant reward plus the reward for
+        reaching the next situation. This reward of the next
+        situation is subjected to a certain discount factor, this
+        will make sure that past event won't influence future
+        decisions to much. In formula form this will look like:</p>
+        <p>Q = SUM [ P * (R + j * V) ]</p>
+        <p>The instant reward is 1 if the roaduser has to wait,
+        else it's 0. The V value is calculated by multiplying the
+        chance that the light is L given this situation by the Q
+        value of this situation. This is done for L is green and
+        red and the V value is the sum of the two.</p>
+
+		<!--<p>The best configuration of traffic lights for the next time slot is chosen for each junction independently,
+		and junctions cannot communicate among one another.</p>
+		<p>Per junction the lanes are passed and for all
+		waiting road users Q is calculated by summation over P(R + V) of traffic lights with their P.
+		V is discounted by a factor with a set domain, so the expected discounted waiting time
+		for a road user given a light's status equals current	waiting probability plus
+		the average waiting time for the next possible states of the road user.</p>
+		<p>V is computed by summing the probabilities of Q given the status of a light. The V, P and Q are computed after each simulation step.
+		</p>-->
+
+
+	<br><br><br><p>
+	<table WIDTH="600" BORDER="0" CELLSPACING="10" CELLPADDING="10">
+	<caption><h2>Example Performance Statistics<h2></caption>
+	<tr><td><b>(Map: Simple) Average Junction Waiting Time	</b><br><br>
+		</td><td><IMG src="screens/simple_sp_tc1_ajwt.gif"></td></tr>
+	<tr><td><b>(Map: Simple) Total Road Users Arrived			</b><br><br>
+		</td><td><IMG src="screens/simple_sp_tc1_att.gif"></td></tr>
+	<tr><td><b>(Map: Simple) Average Trip Waiting Time		</b><br><br>
+		</td><td><IMG src="screens/simple_sp_tc1_atwt.gif"></td></tr>
+	<tr><td><b>(Map: Simple) Total Waiting Queue Length		</b><br><br>
+		</td><td><IMG src="screens/simple_sp_tc1_twql.gif"></td></tr>
+	</table><HR WIDTH="90%" ALIGN="LEFT">
+	<table WIDTH="600" BORDER="0" CELLSPACING="10" CELLPADDING="10">
+	<tr><td><b>(Map: Complex) Average Junction Waiting Time	</b><br><br>
+		</td><td><IMG src="screens/complex_sp_tc1_ajwt.gif"></td></tr>
+	<tr><td><b>(Map: Complex) Total Road Users Arrived			</b><br><br>
+		</td><td><IMG src="screens/complex_sp_tc1_att.gif"></td></tr>
+	<tr><td><b>(Map: Complex) Average Trip Waiting Time		</b><br><br>
+		</td><td><IMG src="screens/complex_sp_tc1_atwt.gif"></td></tr>
+	<tr><td><b>(Map: Complex) Total Waiting Queue Length		</b><br><br>
+		</td><td><IMG src="screens/complex_sp_tc1_twql.gif"></td></tr>
+	</table>
+
+	<p>Thanks to Marco Wiering, Utrecht University.</p>
+
+      </TD>
+  </TR> 
+<TR><TD COLSPAN="2">&nbsp;</TD></TR><TR>
+    <TD>&nbsp;</TD>
+    <TD VALIGN="top" ALIGN="right">&copy; 2001 SP2001-ISG</TD>
+  </TR>
+</TABLE>
+<P>&nbsp;</P>
+</BODY>
+</HTML>

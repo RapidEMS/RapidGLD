@@ -1,0 +1,119 @@
+<HTML>
+<HEAD>
+<TITLE>Green Light District :: Documentation :: Algorithms :: Traffic Light Controllers :: Random</TITLE>
+<LINK REL=stylesheet TYPE="text/css" HREF="sp2001isg.css">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#33FF33" VLINK="#FF6600" ALINK="#FF0000">
+<H4>Green Light District :: Documentation :: Algorithms :: Traffic Light Controllers :: Random</H4>
+<TABLE WIDTH="760" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+  <TR> 
+    <TD><IMG src="screens/blank.gif" WIDTH="140" HEIGHT="10"></TD>
+    <TD><IMG src="screens/blank.gif" WIDTH="660" HEIGHT="10"></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"> 
+      <P><A HREF="index.html">Welcome</A></P>
+      <P>
+		<A HREF="editor.html">1. Editor</A><BR>
+		<A HREF="simulator.html">2. Simulator</A><BR>
+		<A HREF="evaluation.html">3. Evaluation Tools</A><BR>
+		<A HREF="example.html">4. An Example Session</A><BR>
+		<A HREF="algorithms.html">5. Algorithms</A><BR>
+		<IMG src="screens/blank.gif" WIDTH="10" HEIGHT="10"><A HREF="algo_dp.html">a. Driving policies</A><BR>
+
+			<IMG src="screens/blank.gif" WIDTH="10" HEIGHT="10"><A HREF="algo_tlc.html">b. Traffic light controllers</A><BR>
+			<IMG src="screens/blank.gif" WIDTH="20" HEIGHT="10"><A HREF="algo_tlc_rnd.html">	1)  Random		</A><BR>
+			<IMG src="screens/blank.gif" WIDTH="20" HEIGHT="10"><A HREF="algo_tlc_mc.html">	2)  Most Cars	</A><BR>
+			<IMG src="screens/blank.gif" WIDTH="20" HEIGHT="10"><A HREF="algo_tlc_rld.html">	3)  RLD		</A><BR><BR>
+
+			<IMG src="screens/blank.gif" WIDTH="20" HEIGHT="10"><A HREF="algo_tlc_hill.html">	4)  Hillclimbing	</A><BR><BR>
+
+			<IMG src="screens/blank.gif" WIDTH="20" HEIGHT="10"><A HREF="algo_tlc_lq.html">	5)  Longest Queue	</A><BR>
+			<IMG src="screens/blank.gif" WIDTH="20" HEIGHT="10"><A HREF="algo_tlc_rlq.html">	6)  Relative LQ	</A><BR>
+			<IMG src="screens/blank.gif" WIDTH="20" HEIGHT="10"><A HREF="algo_tlc_bf.html">	7)  Best first	</A><BR><BR>
+
+
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_tc-1.html">8) TC-1</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_tc-2.html">9) TC-2</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_tc-3.html">10) TC-3</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_tc-1++.html">11) TC-1++</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_tc-2++.html">12) TC-2++</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_tc-3++.html">13) TC-3++</A><BR>
+<BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_acgj-1.html">14) ACGJ-1</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_acgj-2.html">15) ACGJ-2</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_acgj-3.html">16) ACGJ-3</A><BR>
+<BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_tlc_neural.html">17) GenNeural</A><BR>		</P>
+      <P>
+		<A HREF="specs/index.html" TARGET="_blank">Specifications</A><BR>
+        <BR></P>
+      <P><A HREF="definitions.html">Definitions</A><BR>
+        <BR></P>
+      <P><A HREF="beyond.html">Beyond GLD</A><BR>
+        <BR>
+      </P>
+      <P><A HREF="about.html">About</A><BR>
+      </P>
+    </TD>
+
+    <TD VALIGN="top"> 
+
+      <h2>Random</h2>
+		<p>Essentially assigns a random value to each junction node every time slot, disregarding
+		any data on road users or infrastructure. This value is a reward R for setting a
+		traffic light on green, as seen in the change in waiting time for road users.</p>
+		<p>As it is random here,
+		it has little meaning, and traffic flow suffers from this on all but the simplest of maps in comparison
+		with other algorithms. The reason it might be of use, besides its simplicity to implement
+		(no communication) and for comparison, is its robustness. Facing large amounts of spawning road users,
+		a random algorithm will continue to get some to their destination, albeit inefficiently.</p>
+		<p>On a infrastructure as straightforward as Simple, there appears to be little difference
+		in the flow of traffic, even with medium traffic flow.
+		But as soon as it is used on a more complicated infrastructure over a longer period of time,
+		one can notice how the disregarding of data about road users works out.</p> 
+		<p>Tha randomisation
+		gives, over a longer time frame, each traffic light about the same period for green as for red,
+		making busy junctions clog up and free ones stay green uselessly. This is best demonstrated
+		by giving the edge nodes on one side high spawning frequencies and the edge nodes on another
+		low ones. Given an amount of traffic, the side with high frequencies will clog up in most cases
+		in which the randomisation assigns it values about equal to the side with low frequencies.</p>
+		<p>	This may seem a useless algorithm, but it is fairly close to what is used in current controllers!
+		These do take in to account general traffic flow logic, but cannot change their behaviour according
+		to up to date information on the density of road users.</p>
+
+
+	<br><br><br><p>
+	<table WIDTH="600" BORDER="0" CELLSPACING="10" CELLPADDING="10">
+	<caption><h2>Example Performance Statistics<h2></caption>
+	
+	<tr><td><b>(Map: Simple) Average Junction Waiting Time	</b><br><br>
+		</td><td><IMG src="screens/simple_sp_rnd_ajwt.gif"></td></tr>
+	<tr><td><b>(Map: Simple) Total Road Users Arrived			</b><br><br>
+		</td><td><IMG src="screens/simple_sp_rnd_att.gif"></td></tr>
+	<tr><td><b>(Map: Simple) Average Trip Waiting Time		</b><br><br>
+		</td><td><IMG src="screens/simple_sp_rnd_atwt.gif"></td></tr>
+	<tr><td><b>(Map: Simple) Total Waiting Queue Length		</b><br><br>
+		</td><td><IMG src="screens/simple_sp_rnd_twql.gif"></td></tr>
+	</table><HR WIDTH="90%" ALIGN="LEFT">
+	<table WIDTH="600" BORDER="0" CELLSPACING="10" CELLPADDING="10">
+	<tr><td><b>(Map: Complex) Average Junction Waiting Time	</b><br><br>
+		</td><td><IMG src="screens/complex_sp_rnd_ajwt.gif"></td></tr>
+	<tr><td><b>(Map: Complex) Total Road Users Arrived			</b><br><br>
+		</td><td><IMG src="screens/complex_sp_rnd_att.gif"></td></tr>
+	<tr><td><b>(Map: Complex) Average Trip Waiting Time		</b><br><br>
+		</td><td><IMG src="screens/complex_sp_rnd_atwt.gif"></td></tr>
+	<tr><td><b>(Map: Complex) Total Waiting Queue Length		</b><br><br>
+		</td><td><IMG src="screens/complex_sp_rnd_twql.gif"></td></tr>
+	</table>
+
+     </TD>
+  </TR> 
+<TR><TD COLSPAN="2">&nbsp;</TD></TR><TR>
+    <TD>&nbsp;</TD>
+    <TD VALIGN="top" ALIGN="right">&copy; 2001 SP2001-ISG</TD>
+  </TR>
+</TABLE>
+<P>&nbsp;</P>
+</BODY>
+</HTML>

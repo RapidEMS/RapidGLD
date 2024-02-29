@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>Green Light District :: Documentation :: Algorithms :: Driving policies</TITLE>
+<LINK REL="stylesheet" TYPE="text/css" HREF="sp2001isg.css">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#33FF33" VLINK="#FF6600" ALINK="#FF0000">
+<H4>Green Light District :: Documentation :: Algorithms :: Driving policies</H4>
+
+<TABLE WIDTH="760" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+<TR>
+<TD><IMG SRC="screens/blank.gif" WIDTH="140" HEIGHT="10"></TD>
+<TD><IMG SRC="screens/blank.gif" WIDTH="660" HEIGHT="10"></TD>
+</TR>
+
+<TR>
+<TD VALIGN="top">
+<P><A HREF="index.html">Welcome</A></P>
+
+<P><A HREF="editor.html">1. Editor</A><BR>
+ <A HREF="simulator.html">2. Simulator</A><BR>
+ <A HREF="evaluation.html">3. Evaluation Tools</A><BR>
+ <A HREF="example.html">4. An Example Session</A><BR>
+ <A HREF="algorithms.html">5. Algorithms</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="10" HEIGHT="10"> <A HREF="algo_dp.html">a. Driving policies</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_dp_sp1.html">1) Shortest Path</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_dp_sp2.html">2) Smarter SP</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_dp_cl.html">3) Co-learning</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="20" HEIGHT="10"> <A HREF="algo_dp_agr.html">4) Aggressive</A><BR>
+ <IMG SRC="screens/blank.gif" WIDTH="10" HEIGHT="10"> <A HREF="algo_tlc.html">b. Traffic light controllers</A><BR>
+</P>
+
+<P><A HREF="specs/index.html" TARGET="_blank">Specifications</A><BR>
+<BR>
+</P>
+
+<P><A HREF="definitions.html">Definitions</A><BR>
+<BR>
+</P>
+
+<P><A HREF="beyond.html">Beyond GLD</A><BR>
+<BR>
+</P>
+
+<P><A HREF="about.html">About</A><BR>
+</P>
+</TD>
+<TD VALIGN="top">
+<H2>Path Finding Algorithms for Road Users</H2>
+
+<P>Road users spawn at an edge node with the intention of reaching another node. For this purpose they must follow the roads that comprise a minimum distance to that node. These paths are either
+pre-calculated after map creation or learned during simulation.</P>
+
+<P>Learning yields best results for complex maps where no best setting is evident, but is demanding on the hardware. A driving policy will point a road user every time a decision has to be made to a
+lane, which is not full, is reachable by following the direction rules, and brings the road user closer to its destination.</P>
+
+<!-- <p> Internally, this is done by assigning reward values to possible actions, and taking the most rewarding one when it is possible (green light). </p>-->
+<P>Driving policies have less influence on the flow of traffic than traffic light controllers because, in keeping with realistic possibilities, drivers know less about the status of a city than a
+centralized traffic light control.</P>
+
+<P>Optimizing values locally in regard to the adjacent lanes is always less effective than taking into account the whole environment, but is currently more realistic. Advances in car communicational
+systems that give a driver an overview of the traffic density in the area should give quite different results.</P>
+</TD>
+</TR>
+
+<TR>
+<TD COLSPAN="2">&nbsp;</TD>
+</TR>
+
+<TR>
+<TD>&nbsp;</TD>
+<TD VALIGN="top" ALIGN="right">&copy; 2001 SP2001-ISG</TD>
+</TR>
+</TABLE>
+
+<P>&nbsp;</P>
+</BODY>
+</HTML>
+
